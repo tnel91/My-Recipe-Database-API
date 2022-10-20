@@ -48,6 +48,10 @@ The plan is to create an app that allows a user to create recipes and upload the
 - Database will need two collections, one for recipes and one for pantry items.
 - Routes for adding or updating a recipe/pantry item will need to differentiate the two actions, but can use the same field if possible.
 
+#### _Entity Relationship Diagram_
+
+![Entity Relationship Diagram](https://i.imgur.com/o8JnjLF.png)
+
 ---
 
 ### Credits
