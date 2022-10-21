@@ -6,4 +6,6 @@ router.get('/', (req, res) => res.json(`This route is being hit`))
 
 router.get('/recipes', controllers.getAllRecipes)
 
+router.get('/recipes/:name', controllers.searchRecipesByName)
+
 module.exports = router

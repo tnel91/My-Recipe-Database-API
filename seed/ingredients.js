@@ -6,14 +6,14 @@ db.on('error', console.error.bind(console, 'MongoDB connection error:'))
 const main = async () => {
   const ingredients = [
     {
-      name: `Chicken Thighs`,
+      name: `chicken thighs`,
       quantity: 8,
       unit: `thighs`,
       perishable: true,
       photo: `https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F44%2F2018%2F08%2Fraw-chicken-thigh.jpg`
     },
     {
-      name: `SALT`,
+      name: `salt`,
       quantity: 1,
       unit: `lbs`,
       perishable: false,

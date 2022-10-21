@@ -6,7 +6,7 @@ db.on('error', console.error.bind(console, 'MongoDB connection error:'))
 const main = async () => {
   const recipes = [
     {
-      name: `CREAMY COCONUT LENTIL CURRY`,
+      name: `creamy coconut lentil curry`,
       description: `This easy to make Creamy Coconut Lentil Curry is a healthy vegan recipe that makes a perfect meatless Monday dinner recipe. It takes less than an hour (mostly hands-off time) to make and is packed full of delicious Indian flavors. Make extras and you'll have a giant smile on your face at lunch the next day.`,
       yield: `6 servings`,
       totalTime: `1 HR`,
@@ -32,7 +32,7 @@ const main = async () => {
       url: `https://www.theendlessmeal.com/creamy-coconut-lentil-curry/`
     },
     {
-      name: `Sweet Spicy Gochujang Chicken`,
+      name: `sweet spicy gochujang chicken`,
       description: `Sweet Spicy Gochujang Chicken. Crispy chicken bites smothered in a glossy spicy sweet sauce with a gochujang base. The perfect main to some steamed rice and leafy greens. This is a winner-winner chicken dinner or lunch! Also great for meal prep too! Ready in just 30 minutes.`,
       yield: `5 servings`,
       totalTime: `30 mins`,
@@ -62,7 +62,7 @@ const main = async () => {
       url: `https://christieathome.com/blog/sweet-spicy-gochujang-chicken/`
     },
     {
-      name: `Hearth Bread`,
+      name: `hearth bread`,
       description: `This recipe appeared on the back of our King Arthur flour bags for years. Many a baker has learned to bake crusty, chewy hearth-style bread using this recipe — how about you? With its directions geared towards the beginning bread baker, this is a wonderful place for a "newbie" to start. Bonus: The recipe makes two big loaves, one to enjoy at home and one to share with a neighbor or friend.`,
       yield: `2 loaves`,
       totalTime: `2 hrs 35 mins`,
