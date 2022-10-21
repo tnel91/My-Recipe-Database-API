@@ -4,7 +4,7 @@
 
 ### By: Travis Nelson
 
-#### [GitHub](https://github.com/tnel91/Travis_Recipe_App) | [LinkedIn](https://www.linkedin.com/in/tnelson2013/) | [Trello](https://trello.com/b/m0n2neWP/travis-recipe-app)
+#### [GitHub](https://github.com/tnel91/Travis_Recipe_App) | [LinkedIn](https://www.linkedin.com/in/travis-nelson91/) | [Trello](https://trello.com/b/m0n2neWP/travis-recipe-app)
 
 ---
 
