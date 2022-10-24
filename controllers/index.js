@@ -1,3 +1,4 @@
+// const db = require('../db')
 const { Recipe, Ingredient } = require('../models')
 
 const getAllRecipes = async (req, res) => {
@@ -12,9 +13,15 @@ const getAllRecipes = async (req, res) => {
 const searchRecipesByName = async (req, res) => {
   try {
     const { name } = req.params
-    console.log(name)
-    const recipes = await Recipe.find({ name: /name/i })
-    res.status(200).json(recipes)
+    const searchResults = await Recipe.aggregate([
+      {
+        $search: {
+          index: 'RecipeSearchByName',
+          text: { query: name, path: 'name' }
+        }
+      }
+    ])
+    res.status(200).json(searchResults)
   } catch (error) {
     return res.status(500).send(error.message)
   }
