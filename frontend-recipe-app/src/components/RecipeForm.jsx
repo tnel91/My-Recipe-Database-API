@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import axios from 'axios'
 
 const RecipeForm = () => {
   const initialState = {
@@ -20,12 +21,15 @@ const RecipeForm = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault()
-    console.log(formState)
     let newRecipe = await axios
-      .post('https://localhost:3001/api/recipes')
-      .then((res) => {
-        return res
+      .post('http://localhost:3001/api/recipes', formState)
+      .then((response) => {
+        return response
       })
+      .catch((error) => {
+        console.log(error)
+      })
+    console.log(`created new recipe`, newRecipe.data)
     // setFormState(initialState)
   }
 
