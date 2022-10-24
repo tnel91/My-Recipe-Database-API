@@ -8,4 +8,6 @@ router.get('/recipes', controllers.getAllRecipes)
 
 router.get('/recipes/:name', controllers.searchRecipesByName)
 
+router.post('/recipes', controllers.createNewRecipe)
+
 module.exports = router
