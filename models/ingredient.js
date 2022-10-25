@@ -6,7 +6,7 @@ const ingredientSchema = new Schema(
     quantity: { type: Number, required: true },
     unit: { type: String, required: true },
     perishable: { type: Boolean, require: true },
-    photo: { type: String, required: false }
+    image: { type: String, required: false }
   },
   { timestamps: true }
 )

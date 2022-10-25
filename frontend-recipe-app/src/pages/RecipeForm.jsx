@@ -9,7 +9,7 @@ const RecipeForm = () => {
     totalTime: '',
     ingredients: '',
     instructions: '',
-    photo: '',
+    image: '',
     url: '',
     notes: ''
   }
@@ -29,8 +29,9 @@ const RecipeForm = () => {
       .catch((error) => {
         console.log(error)
       })
+    alert('Added New Recipe!')
     console.log(`created new recipe`, newRecipe.data)
-    // setFormState(initialState)
+    setFormState(initialState)
   }
 
   return (
@@ -69,11 +70,11 @@ const RecipeForm = () => {
           onChange={handleChange}
           value={formState.instructions}
         ></textarea>
-        <label htmlFor="photo">Photo:</label>
+        <label htmlFor="image">Image:</label>
         <input
-          id="photo"
+          id="image"
           onChange={handleChange}
-          value={formState.photo}
+          value={formState.image}
         ></input>
         <label htmlFor="url">URL:</label>
         <input id="url" onChange={handleChange} value={formState.url}></input>

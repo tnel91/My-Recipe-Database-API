@@ -2,9 +2,9 @@ const { Router } = require('express')
 const controllers = require('../controllers')
 const router = Router()
 
-router.get('/', (req, res) => res.json(`This route is being hit`))
+// router.get('/', (req, res) => res.json(`This route is being hit`))
 
-router.get('/recipes', controllers.getAllRecipes)
+router.get('/recipes', controllers.getTwentyRecipes)
 
 router.get('/recipes/:searchTerm', controllers.searchRecipesByName)
 

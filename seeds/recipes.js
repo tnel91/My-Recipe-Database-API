@@ -26,7 +26,7 @@ const main = async () => {
       instructions: `Heat the coconut oil in a large pot or skillet over medium-high heat. Add the cumin and coriander seeds and toast until they start to brown, about 45 seconds. Add the garlic to the pot and let it brown, about 2 minutes.
       Add the can of crushed tomatoes, ginger, turmeric, and sea salt to the pot and cook, stirring the pot a few times, for 5 minutes. Add the lentils and, if using, the cayenne powder, and the water to the pot and bring it to a boil. Reduce the heat to low, cover the pot, and let it simmer for 35-40 minutes, or until the lentils are soft. Stir the pot a few times to prevent the lentils from sticking to the bottom. If the curry starts to look dry, add an extra ½ – 1 cup of water.
       Once the lentils are soft and the curry is thick, add the coconut milk and cherry tomatoes and bring the pot back to a simmer. Remove the pot from the heat and stir in the cilantro.`,
-      photo: `https://www.theendlessmeal.com/wp-content/uploads/2016/07/Creamy-Coconut-Lentil-Curry-680-4.jpg`,
+      image: `https://www.theendlessmeal.com/wp-content/uploads/2016/07/Creamy-Coconut-Lentil-Curry-680-4.jpg`,
       url: `https://www.theendlessmeal.com/creamy-coconut-lentil-curry/`
     },
     {
@@ -54,7 +54,7 @@ const main = async () => {
       Remove the fried chicken and transfer to a plate. Increase the heat to high. With the residual oil in the pan, add onion and fry for 1 minutes until aromatic.
       Next add your remaining sauce ingredients, leaving the soy sauce last to add. Mix well breaking apart the gochujang. Finally add the cornstarch slurry and mix. Reduce and simmer the sauce until thick and glossy.
       Finally add your fried chicken back in and cover in the sauce. Once all the chicken is covered in the sauce, remove and transfer to a serving plate. Garnish with sesame seeds and green onions (optional). Enjoy!`,
-      photo: `https://christieathome.com/wp-content/uploads/2021/04/Korean-Gochujang-Chicken-3.jpg`,
+      image: `https://christieathome.com/wp-content/uploads/2021/04/Korean-Gochujang-Chicken-3.jpg`,
       url: `https://christieathome.com/blog/sweet-spicy-gochujang-chicken/`
     },
     {
@@ -78,7 +78,7 @@ const main = async () => {
       Bake the bread for 35 to 40 minutes, until the crust is golden brown and sounds hollow to the touch. The interior temperature of the bread should register at least 200°F on a digital thermometer.
       Remove the loaves from the oven, take them off the pan, and return them to the oven, placing them right on the rack. Turn the oven off and crack the door open several inches. Let the loaves cool in the cooling oven; this will make them extra-crusty.
       Store completely cool bread in a paper bag at room temperature for a couple of days. For longer storage, wrap well and freeze.`,
-      photo: `https://www.kingarthurbaking.com/sites/default/files/styles/featured_image/public/recipe_legacy/6001-3-large.jpg?itok=vlsMBK5x`,
+      image: `https://www.kingarthurbaking.com/sites/default/files/styles/featured_image/public/recipe_legacy/6001-3-large.jpg?itok=vlsMBK5x`,
       url: `https://www.kingarthurbaking.com/recipes/hearth-bread-recipe`,
       notes: `Can you mix and knead this dough using a bread machine? Yes, of course. Place all of the ingredients into the bucket of your machine, set it to the dough cycle, and let the machine complete its cycle. Shape, let rise, and bake bread as directed in the recipe above.
       As a result of reader feedback, we've omitted the instructions from the original recipe for baking the bread by starting it in a cold oven. Not all ovens preheat the same way, and baking in a preheating oven may cause bread to burn. For those of you who've been making this recipe successfully starting in a cold oven, here are the directions you'd been using, starting with slashing the risen loaves: "Lightly slash the tops of the loaves three or more times diagonally and brush them with cold water. Place the pan on the middle rack of a cold oven with a roasting filled about 1" deep with boiling water on the oven bottom. Set the oven temperature to 450°F, and turn on the oven. Bake the bread for 35 to 45 minutes, until the crust is golden brown and sounds hollow to the touch. Its interior temperature should register at least 190°F on a digital thermometer."`

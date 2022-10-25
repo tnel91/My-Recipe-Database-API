@@ -1,9 +1,9 @@
 // const db = require('../db')
 const { Recipe, Ingredient } = require('../models')
 
-const getAllRecipes = async (req, res) => {
+const getTwentyRecipes = async (req, res) => {
   try {
-    const recipes = await Recipe.find()
+    const recipes = await Recipe.find({}, {}, { limit: 20 })
     res.status(200).json(recipes)
   } catch (error) {
     return res.status(500).send(error.message)
@@ -54,7 +54,7 @@ const createNewRecipe = async (req, res) => {
 }
 
 module.exports = {
-  getAllRecipes,
+  getTwentyRecipes,
   searchRecipesByName,
   searchRecipesByIngredient,
   createNewRecipe

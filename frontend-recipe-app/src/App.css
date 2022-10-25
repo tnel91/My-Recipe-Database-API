@@ -47,3 +47,28 @@ header nav a {
   margin: 0 1em;
   text-decoration: none;
 }
+
+.results {
+  margin: 3em;
+}
+
+.recipe-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 400px);
+  grid-gap: 1em
+  
+}
+
+.recipe-card {
+  border: 2px solid black;
+}
+
+.recipe-card .img-wrapper {
+  border: 1px solid red;
+  height: 150px;
+}
+
+.recipe-card .img-wrapper img {
+  height: 100%;
+
+}

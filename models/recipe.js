@@ -8,7 +8,7 @@ const recipeSchema = new Schema(
     totalTime: { type: String, required: false },
     ingredients: { type: String, required: true },
     instructions: { type: String, required: true },
-    photo: { type: String, required: false },
+    image: { type: String, required: false },
     url: { type: String, required: false },
     notes: { type: String, required: false }
   },
