@@ -10,6 +10,10 @@ import RecipeDetails from './pages/RecipeDetails'
 const App = () => {
   let navigate = useNavigate()
 
+  const showRecipeDetails = (id) => {
+    navigate(`/recipes/${id}`)
+  }
+
   return (
     <div className="App">
       <Header />
@@ -17,9 +21,12 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
-          <Route path="/recipes" element={<RecipeList />} />
+          <Route
+            path="/recipes"
+            element={<RecipeList showRecipeDetails={showRecipeDetails} />}
+          />
           <Route path="/recipes/form" element={<RecipeForm />} />
-          <Route path="/recipes/details" element={<RecipeDetails />} />
+          <Route path="/recipes/:recipeId" element={<RecipeDetails />} />
         </Routes>
       </main>
     </div>

@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react'
 
 import RecipeCard from '../components/RecipeCard'
 
-const RecipeList = () => {
+const RecipeList = (props) => {
   const [recipes, setRecipes] = useState([])
 
   const getRecipes = async () => {
@@ -37,6 +37,7 @@ const RecipeList = () => {
                 yield={recipe.yield}
                 totalTime={recipe.totalTime}
                 image={recipe.image}
+                onClick={props.showRecipeDetails}
               />
             </div>
           ))}

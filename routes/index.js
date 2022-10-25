@@ -6,6 +6,8 @@ const router = Router()
 
 router.get('/recipes', controllers.getTwentyRecipes)
 
+router.get('/recipes/:recipeId', controllers.getOneRecipe)
+
 router.get('/recipes/:searchTerm', controllers.searchRecipesByName)
 
 router.get('/ingredients/:searchTerm', controllers.searchRecipesByIngredient)
