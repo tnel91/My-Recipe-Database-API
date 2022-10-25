@@ -9,8 +9,8 @@ const RecipeDetails = () => {
     description: '',
     yield: '',
     totalTime: '',
-    ingredients: '',
-    instructions: '',
+    ingredients: [],
+    instructions: [],
     image: '',
     url: ''
   })
@@ -32,8 +32,8 @@ const RecipeDetails = () => {
       description: response.description,
       yield: response.yield,
       totalTime: response.totalTime,
-      ingredients: response.ingredients,
-      instructions: response.instructions,
+      ingredients: response.ingredients.split('\n'),
+      instructions: response.instructions.split('\n'),
       image: response.image,
       url: response.url
     })
@@ -48,7 +48,17 @@ const RecipeDetails = () => {
       <h2>Recipe Details</h2>
       <h1>{recipeDetails.name}</h1>
       {/* <img src={recipeDetails.image} alt="Recipe Image" /> */}
-      <p>{recipeDetails.ingredients}</p>
+      <ul className="recipe-ingredients">
+        {recipeDetails.ingredients.map((ingredient, index) => (
+          <li key={index}>{ingredient}</li>
+        ))}
+      </ul>
+      <br />
+      <ol className="recipe-instructions">
+        {recipeDetails.instructions.map((step, index) => (
+          <li key={index}>{step}</li>
+        ))}
+      </ol>
     </div>
   )
 }

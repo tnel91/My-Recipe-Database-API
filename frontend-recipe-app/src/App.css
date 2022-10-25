@@ -72,3 +72,11 @@ header nav a {
   height: 100%;
 
 }
+
+.recipe-ingredients {
+  white-space: pre-line;
+}
+
+.recipe-instructions {
+  white-space: pre-line;
+}
