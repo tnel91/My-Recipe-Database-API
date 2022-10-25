@@ -1,6 +1,6 @@
 import './App.css'
 import { Routes, Route } from 'react-router-dom'
-import Nav from './components/Nav'
+import Header from './components/Header'
 import Home from './components/Home'
 import About from './components/About'
 import RecipeList from './components/RecipeList'
@@ -10,9 +10,7 @@ import RecipeDetails from './components/RecipeDetails'
 const App = () => {
   return (
     <div className="App">
-      <header>
-        <Nav />
-      </header>
+      <Header />
       <main>
         <Routes>
           <Route path="/" element={<Home />} />
