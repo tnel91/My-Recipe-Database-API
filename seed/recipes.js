@@ -10,21 +10,19 @@ const main = async () => {
       description: `This easy to make Creamy Coconut Lentil Curry is a healthy vegan recipe that makes a perfect meatless Monday dinner recipe. It takes less than an hour (mostly hands-off time) to make and is packed full of delicious Indian flavors. Make extras and you'll have a giant smile on your face at lunch the next day.`,
       yield: `6 servings`,
       totalTime: `1 HR`,
-      ingredients: [
-        `1 tablespoon coconut oil`,
-        `1 tablespoon each: cumin seeds and coriander seeds`,
-        `1 head garlic, chopped (10-12 cloves)`,
-        `28 ounce can of crushed tomatoes`,
-        `2 tablespoons ginger, chopped`,
-        `1 tablespoon turmeric`,
-        `2 teaspoons sea salt`,
-        `1 cup dried brown lentils`,
-        `1-2 teaspoons cayenne powder, optional`,
-        `3 cups water`,
-        `15 ounce can coconut milk`,
-        `A few handfuls of cherry tomatoes`,
-        `1 cup chopped cilantro`
-      ],
+      ingredients: `1 tablespoon coconut oil
+      1 tablespoon each: cumin seeds and coriander seeds
+      1 head garlic, chopped (10-12 cloves)
+      28 ounce can of crushed tomatoes
+      2 tablespoons ginger, chopped
+      1 tablespoon turmeric
+      2 teaspoons sea salt
+      1 cup dried brown lentils
+      1-2 teaspoons cayenne powder, optional
+      3 cups water
+      15 ounce can coconut milk
+      A few handfuls of cherry tomatoes
+      1 cup chopped cilantro`,
       instructions: `Heat the coconut oil in a large pot or skillet over medium-high heat. Add the cumin and coriander seeds and toast until they start to brown, about 45 seconds. Add the garlic to the pot and let it brown, about 2 minutes.
       Add the can of crushed tomatoes, ginger, turmeric, and sea salt to the pot and cook, stirring the pot a few times, for 5 minutes. Add the lentils and, if using, the cayenne powder, and the water to the pot and bring it to a boil. Reduce the heat to low, cover the pot, and let it simmer for 35-40 minutes, or until the lentils are soft. Stir the pot a few times to prevent the lentils from sticking to the bottom. If the curry starts to look dry, add an extra ½ – 1 cup of water.
       Once the lentils are soft and the curry is thick, add the coconut milk and cherry tomatoes and bring the pot back to a simmer. Remove the pot from the heat and stir in the cilantro.`,
@@ -36,22 +34,20 @@ const main = async () => {
       description: `Sweet Spicy Gochujang Chicken. Crispy chicken bites smothered in a glossy spicy sweet sauce with a gochujang base. The perfect main to some steamed rice and leafy greens. This is a winner-winner chicken dinner or lunch! Also great for meal prep too! Ready in just 30 minutes.`,
       yield: `5 servings`,
       totalTime: `30 mins`,
-      ingredients: [
-        `6 boneless skinless chicken thighs diced (skinless boneless)`,
-        `½ red onion chopped`,
-        `¼ cup cornstarch`,
-        `¼ cup avocado oil`,
-        `½ tbsp garlic minced`,
-        `2 tbsp white granulated sugar`,
-        `2 tsp sesame seeds`,
-        `2 tbsp Gochujang`,
-        `¾ tsp sesame oil`,
-        `2 tbsp regular soy sauce not light or dark!`,
-        `1 tbsp cornstarch`,
-        `1 cup water`,
-        `1 tsp sesame seeds`,
-        `1 stalk green onion sliced`
-      ],
+      ingredients: `6 boneless skinless chicken thighs diced (skinless boneless)
+      ½ red onion chopped
+      ¼ cup cornstarch
+      ¼ cup avocado oil
+      ½ tbsp garlic minced
+      2 tbsp white granulated sugar
+      2 tsp sesame seeds
+      2 tbsp Gochujang
+      ¾ tsp sesame oil
+      2 tbsp regular soy sauce not light or dark!
+      1 tbsp cornstarch
+      1 cup water
+      1 tsp sesame seeds
+      1 stalk green onion sliced`,
       instructions: `In a small bowl, whisk together your cornstarch slurry ingredients together and set aside.
       In a large mixing bowl add your diced chicken thighs followed by cornstarch and mix until each piece is coated in cornstarch. Tip: Ensure your chicken thighs are a bit wet or moist so the cornstarch can stick. If they’re dry for any reason, rinse the thighs under cold water and strain before dicing.
       Then in a large pan or wok set over medium high heat, add your avocado oil. Once the oil is hot and glistening, carefully lower your coated chicken and fry until golden, crispy brown. About 10 minutes depending on how high your heat is. You may need to adjust your heat.
@@ -66,14 +62,12 @@ const main = async () => {
       description: `This recipe appeared on the back of our King Arthur flour bags for years. Many a baker has learned to bake crusty, chewy hearth-style bread using this recipe — how about you? With its directions geared towards the beginning bread baker, this is a wonderful place for a "newbie" to start. Bonus: The recipe makes two big loaves, one to enjoy at home and one to share with a neighbor or friend.`,
       yield: `2 loaves`,
       totalTime: `2 hrs 35 mins`,
-      ingredients: [
-        `1 (1/4-ounce) packet active dry yeast or 2 1/4 teaspoons instant yeast`,
-        `1 tablespoon (14g) granulated sugar`,
-        `1 tablespoon (18g) salt`,
-        `2 cups (454g) lukewarm water (not over 110°F)`,
-        `5 1/2 to 6 cups (660g to 720g) King Arthur Unbleached All-Purpose Flour`,
-        `cornmeal or semolina for sprinkling on the pan, optional`
-      ],
+      ingredients: `1 (1/4-ounce) packet active dry yeast or 2 1/4 teaspoons instant yeast
+      1 tablespoon (14g) granulated sugar
+      1 tablespoon (18g) salt
+      2 cups (454g) lukewarm water (not over 110°F)
+      5 1/2 to 6 cups (660g to 720g) King Arthur Unbleached All-Purpose Flour
+      cornmeal or semolina for sprinkling on the pan, optional`,
       instructions: `To mix the dough: Mix all of the ingredients together, using the smaller amount of flour. Mix thoroughly until the dough pulls away from the sides of the bowl, adding more of the flour if necessary. Turn the dough out onto a floured surface to knead. (This may be a little messy, but don't give up!)
       To knead the dough by hand: Fold the far edge of the dough back over on itself towards you. Press into the dough with the heels of your hands and push away. After each push, rotate the dough 90°. Repeat this process in a rhythmic, rocking motion for 5 minutes, sprinkling only enough flour on your kneading surface to prevent sticking. Let the dough rest while you scrape out and grease the mixing bowl. Knead the dough again for 2 to 3 minutes.
       To knead the dough using a stand mixer: Mix all of the ingredients together using your mixer's dough hook. You'll want to reduce the amount of water to 1 3/4 cups, since you won't be using any extra flour on a kneading surface, as you do when kneading by hand. Knead the dough at low-medium speed for about 10 minutes total, until it's smooth and just barely sticking to the bottom and/or sides of the bowl.

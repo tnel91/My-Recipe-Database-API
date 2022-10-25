@@ -12,12 +12,29 @@ const getAllRecipes = async (req, res) => {
 
 const searchRecipesByName = async (req, res) => {
   try {
-    const { name } = req.params
+    const { searchTerm } = req.params
     const searchResults = await Recipe.aggregate([
       {
         $search: {
           index: 'RecipeSearchByName',
-          text: { query: name, path: 'name' }
+          text: { query: searchTerm, path: 'name' }
+        }
+      }
+    ])
+    res.status(200).json(searchResults)
+  } catch (error) {
+    return res.status(500).send(error.message)
+  }
+}
+
+const searchRecipesByIngredient = async (req, res) => {
+  try {
+    const { searchTerm } = req.params
+    const searchResults = await Recipe.aggregate([
+      {
+        $search: {
+          index: 'RecipeSearchByIngredient',
+          text: { query: searchTerm, path: 'ingredients' }
         }
       }
     ])
@@ -39,5 +56,6 @@ const createNewRecipe = async (req, res) => {
 module.exports = {
   getAllRecipes,
   searchRecipesByName,
+  searchRecipesByIngredient,
   createNewRecipe
 }

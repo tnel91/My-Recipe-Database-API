@@ -6,7 +6,9 @@ router.get('/', (req, res) => res.json(`This route is being hit`))
 
 router.get('/recipes', controllers.getAllRecipes)
 
-router.get('/recipes/:name', controllers.searchRecipesByName)
+router.get('/recipes/:searchTerm', controllers.searchRecipesByName)
+
+router.get('/ingredients/:searchTerm', controllers.searchRecipesByIngredient)
 
 router.post('/recipes', controllers.createNewRecipe)
 
