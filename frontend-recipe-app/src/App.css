@@ -32,3 +32,19 @@ label {
   background-color: aquamarine;
   grid-column: 1 / 3;
 }
+
+.nav {
+  background-color: grey;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 4em;
+}
+
+.navLink {
+
+}
+
+Link {
+  background-color: red;
+}
