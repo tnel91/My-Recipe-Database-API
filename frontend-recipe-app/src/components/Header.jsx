@@ -14,9 +14,6 @@ const Header = () => {
           <Link to="/recipes">Recipes</Link>
         </div>
         <div className="navLink">
-          <Link to="/recipes/details">Recipe Details</Link>
-        </div>
-        <div className="navLink">
           <Link to="/recipes/form">Recipe Form</Link>
         </div>
       </nav>
