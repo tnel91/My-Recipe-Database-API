@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import axios from 'axios'
 
-const RecipeForm = () => {
+const RecipeForm = (props) => {
   const initialState = {
     name: '',
     description: '',

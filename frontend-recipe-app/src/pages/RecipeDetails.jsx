@@ -2,7 +2,7 @@ import { useParams } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import axios from 'axios'
 
-const RecipeDetails = () => {
+const RecipeDetails = (props) => {
   const [selectedRecipe, setSelectedRecipe] = useState(null)
   const [recipeDetails, setRecipeDetails] = useState({
     name: '',
@@ -59,6 +59,7 @@ const RecipeDetails = () => {
           <li key={index}>{step}</li>
         ))}
       </ol>
+      <button onClick={() => props.showUpdateForm(recipeId)}>Edit</button>
     </div>
   )
 }

@@ -14,6 +14,10 @@ const App = () => {
     navigate(`/recipes/${id}`)
   }
 
+  const showUpdateForm = (id) => {
+    navigate(`/recipes/form/${id}`)
+  }
+
   return (
     <div className="App">
       <Header />
@@ -25,8 +29,15 @@ const App = () => {
             path="/recipes"
             element={<RecipeList showRecipeDetails={showRecipeDetails} />}
           />
-          <Route path="/recipes/form" element={<RecipeForm />} />
-          <Route path="/recipes/:recipeId" element={<RecipeDetails />} />
+          <Route path="/recipes/form" element={<RecipeForm formType="new" />} />
+          <Route
+            path="/recipes/form/:recipeId"
+            element={<RecipeForm formType="update" />}
+          />
+          <Route
+            path="/recipes/:recipeId"
+            element={<RecipeDetails showUpdateForm={showUpdateForm} />}
+          />
         </Routes>
       </main>
     </div>
