@@ -27,7 +27,7 @@ const RecipeForm = (props) => {
 
   const handleSubmit = async (event) => {
     event.preventDefault()
-    if (props.formType === 'update') {
+    if (props.updateForm) {
       let updatedRecipe = await axios
         .put(`http://localhost:3001/api/recipes/${recipeId}`, formState)
         .then((response) => {
@@ -78,7 +78,7 @@ const RecipeForm = (props) => {
   }
 
   useEffect(() => {
-    if (props.formType === 'update') {
+    if (props.updateForm) {
       updateTemplate()
     }
   }, [recipeId])

@@ -1,11 +1,13 @@
 import axios from 'axios'
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import RecipeSearch from '../components/RecipeSearch'
 
 import RecipeCard from '../components/RecipeCard'
 
 const RecipeList = (props) => {
   const [recipes, setRecipes] = useState([])
+  const [searchQuery, setSearchQuery] = useState('')
 
   const getRecipes = async () => {
     const response = await axios
@@ -19,6 +21,10 @@ const RecipeList = (props) => {
     setRecipes(response)
   }
 
+  const handleChange = (event) => {
+    setSearchQuery(event.target.value)
+  }
+
   useEffect(() => {
     getRecipes()
   }, [])
@@ -27,7 +33,9 @@ const RecipeList = (props) => {
     <div>
       <h1>Recipe List</h1>
       <Link to="/recipes/form">Create Recipe</Link>
-      <div className="search"></div>
+      <div className="search">
+        <RecipeSearch handleChange={handleChange} searchQuery={searchQuery} />
+      </div>
       <div className="results">
         <h2>Recipes</h2>
         <section className="recipe-grid">

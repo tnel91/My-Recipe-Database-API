@@ -32,18 +32,14 @@ const App = () => {
           <Route
             path="/recipes/form"
             element={
-              <RecipeForm
-                formType="new"
-                heading="Create New Recipe"
-                submit="Create Recipe"
-              />
+              <RecipeForm heading="Create New Recipe" submit="Create Recipe" />
             }
           />
           <Route
             path="/recipes/form/:recipeId"
             element={
               <RecipeForm
-                formType="update"
+                updateForm="true"
                 heading="Update Recipe"
                 submit="Update Recipe"
               />
