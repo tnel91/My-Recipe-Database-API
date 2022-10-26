@@ -66,10 +66,10 @@ const updateRecipe = async (req, res) => {
   try {
     let updatedRecipe = await Recipe.findByIdAndUpdate(
       req.params.recipeId,
-      req.body,
-      { new: true }
+      req.body
+      // { new: true }
     )
-    res.json(updatedRecipe)
+    res.status(200).json(updatedRecipe)
   } catch (error) {
     return res.status(500).send(error.message)
   }

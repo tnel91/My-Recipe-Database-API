@@ -6,6 +6,7 @@ import About from './pages/About'
 import RecipeList from './pages/RecipeList'
 import RecipeForm from './pages/RecipeForm'
 import RecipeDetails from './pages/RecipeDetails'
+import Pantry from './pages/Pantry'
 
 const App = () => {
   let navigate = useNavigate()
@@ -49,6 +50,7 @@ const App = () => {
             path="/recipes/:recipeId"
             element={<RecipeDetails showUpdateForm={showUpdateForm} />}
           />
+          <Route path="/pantry" element={<Pantry />} />
         </Routes>
       </main>
     </div>

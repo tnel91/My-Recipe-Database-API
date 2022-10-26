@@ -1,8 +1,8 @@
 import axios from 'axios'
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import RecipeSearch from '../components/RecipeSearch'
 
+import RecipeSearch from '../components/RecipeSearch'
 import RecipeCard from '../components/RecipeCard'
 
 const RecipeList = (props) => {

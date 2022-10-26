@@ -36,7 +36,6 @@ const RecipeForm = (props) => {
         .catch((error) => {
           console.log(error)
         })
-      alert('Updated Recipe!')
       console.log(`updated recipe`, updatedRecipe)
       navigate(`/recipes/${recipeId}`)
     } else {
@@ -48,9 +47,8 @@ const RecipeForm = (props) => {
         .catch((error) => {
           console.log(error)
         })
-      alert('Added New Recipe!')
-      console.log(`created new recipe`, newRecipe)
       setFormState(initialState)
+      navigate(`/recipes/${newRecipe._id}`)
     }
   }
 

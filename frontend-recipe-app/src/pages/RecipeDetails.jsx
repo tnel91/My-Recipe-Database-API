@@ -67,7 +67,7 @@ const RecipeDetails = (props) => {
       </button>
       <button onClick={() => deleteRecipe()}>Delete Recipe</button>
       <h1>{recipeDetails.name}</h1>
-      {/* <img src={recipeDetails.image} alt="Recipe Image" /> */}
+      <img src={recipeDetails.image} alt="Recipe Image" />
       <ul className="recipe-ingredients">
         {recipeDetails.ingredients.map((ingredient, index) => (
           <li key={index}>{ingredient}</li>
