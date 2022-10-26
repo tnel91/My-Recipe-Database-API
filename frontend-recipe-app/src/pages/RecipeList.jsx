@@ -7,7 +7,10 @@ import RecipeCard from '../components/RecipeCard'
 
 const RecipeList = (props) => {
   const [recipes, setRecipes] = useState([])
-  const [searchQuery, setSearchQuery] = useState({ query: '', type: 'Name' })
+  const [searchQuery, setSearchQuery] = useState({
+    searchType: 'Name',
+    query: ''
+  })
 
   const getRecipes = async () => {
     const response = await axios
@@ -22,7 +25,38 @@ const RecipeList = (props) => {
   }
 
   const handleChange = (event) => {
-    setSearchQuery({ ...searchQuery, [event.target.name]: event.target.value })
+    setSearchQuery({ ...searchQuery, [event.target.id]: event.target.value })
+  }
+
+  const handleSubmit = async (event) => {
+    event.preventDefault()
+    if (searchQuery.searchType === 'Name') {
+      const results = await axios
+        .get(
+          `http://localhost:3001/api/recipe_search_by_name/${searchQuery.query}`
+        )
+        .then((response) => {
+          return response.data
+        })
+        .catch((error) => {
+          console.log(error)
+        })
+      setRecipes(results)
+    }
+    if (searchQuery.searchType === 'Ingredients') {
+      const results = await axios
+        .get(
+          `http://localhost:3001/api/recipe_search_by_ingr/${searchQuery.query}`
+        )
+        .then((response) => {
+          return response.data
+        })
+        .catch((error) => {
+          console.log(error)
+        })
+      setRecipes(results)
+    }
+    setSearchQuery({ ...searchQuery, query: '' })
   }
 
   useEffect(() => {
@@ -34,7 +68,11 @@ const RecipeList = (props) => {
       <h1>Recipe List</h1>
       <Link to="/recipes/form">Create Recipe</Link>
       <div className="search">
-        <RecipeSearch handleChange={handleChange} query={searchQuery.query} />
+        <RecipeSearch
+          handleChange={handleChange}
+          query={searchQuery.query}
+          handleSubmit={handleSubmit}
+        />
       </div>
       <div className="results">
         <h2>Recipes</h2>

@@ -8,9 +8,15 @@ router.get('/recipes', controllers.getTwentyRecipes)
 
 router.get('/recipes/:recipeId', controllers.getOneRecipe)
 
-router.get('/recipes/:searchTerm', controllers.searchRecipesByName)
+router.get(
+  '/recipe_search_by_name/:searchTerm',
+  controllers.searchRecipesByName
+)
 
-router.get('/ingredients/:searchTerm', controllers.searchRecipesByIngredient)
+router.get(
+  '/recipe_search_by_ingr/:searchTerm',
+  controllers.searchRecipesByIngredient
+)
 
 router.post('/recipes', controllers.createNewRecipe)
 
