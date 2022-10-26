@@ -7,7 +7,7 @@ import RecipeCard from '../components/RecipeCard'
 
 const RecipeList = (props) => {
   const [recipes, setRecipes] = useState([])
-  const [searchQuery, setSearchQuery] = useState('')
+  const [searchQuery, setSearchQuery] = useState({ query: '', type: 'name' })
 
   const getRecipes = async () => {
     const response = await axios
@@ -34,7 +34,10 @@ const RecipeList = (props) => {
       <h1>Recipe List</h1>
       <Link to="/recipes/form">Create Recipe</Link>
       <div className="search">
-        <RecipeSearch handleChange={handleChange} searchQuery={searchQuery} />
+        <RecipeSearch
+          handleChange={handleChange}
+          searchQuery={searchQuery.query}
+        />
       </div>
       <div className="results">
         <h2>Recipes</h2>
