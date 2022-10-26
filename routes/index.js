@@ -16,4 +16,6 @@ router.post('/recipes', controllers.createNewRecipe)
 
 router.put('/recipes/:recipeId', controllers.updateRecipe)
 
+router.delete('/recipes/:recipeId', controllers.deleteRecipe)
+
 module.exports = router
