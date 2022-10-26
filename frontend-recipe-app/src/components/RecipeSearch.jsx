@@ -4,15 +4,15 @@ const RecipeSearch = (props) => {
       <h2>Recipe Search</h2>
       <form id="Search-form">
         <label for="searchType">Search Recipes By:</label>
-        <select id="searchType" name="searchType">
+        <select id="searchType" name="type" onChange={props.handleChange}>
           <option value="Name">Name</option>
           <option value="Ingredients">Ingredients</option>
         </select>
         <input
           type="text"
-          name="search"
+          name="query"
           onChange={props.handleChange}
-          value={props.searchQuery}
+          value={props.query}
           placeholder="Search Recipes"
         />
         <button type="submit">search</button>
