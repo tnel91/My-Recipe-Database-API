@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
+import { useState, useEffect } from 'react'
 
 import axios from 'axios'
 
@@ -31,25 +31,25 @@ const RecipeForm = (props) => {
       let updatedRecipe = await axios
         .put(`http://localhost:3001/api/recipes/${recipeId}`, formState)
         .then((response) => {
-          return response
+          return response.data
         })
         .catch((error) => {
           console.log(error)
         })
       alert('Updated Recipe!')
-      console.log(`updated recipe`, updatedRecipe.data)
+      console.log(`updated recipe`, updatedRecipe)
       navigate(`/recipes/${recipeId}`)
     } else {
       let newRecipe = await axios
         .post(`http://localhost:3001/api/recipes`, formState)
         .then((response) => {
-          return response
+          return response.data
         })
         .catch((error) => {
           console.log(error)
         })
       alert('Added New Recipe!')
-      console.log(`created new recipe`, newRecipe.data)
+      console.log(`created new recipe`, newRecipe)
       setFormState(initialState)
     }
   }

@@ -1,5 +1,5 @@
-import { useParams } from 'react-router-dom'
-import { useEffect, useState } from 'react'
+import { useParams, useNavigate } from 'react-router-dom'
+import { useState, useEffect } from 'react'
 import axios from 'axios'
 
 const RecipeDetails = (props) => {
@@ -16,6 +16,7 @@ const RecipeDetails = (props) => {
   })
 
   let { recipeId } = useParams()
+  let navigate = useNavigate()
 
   const setRecipe = async () => {
     const response = await axios
@@ -39,6 +40,21 @@ const RecipeDetails = (props) => {
     })
   }
 
+  const deleteRecipe = async () => {
+    console.log('clicked')
+    const deletedRecipe = await axios
+      .delete(`http://localhost:3001/api/recipes/${recipeId}`)
+      .then((res) => {
+        return res.data
+      })
+      .catch((error) => {
+        console.log(error)
+      })
+    alert('Deleted Recipe')
+    console.log('deleted recipe', deletedRecipe)
+    navigate(`/recipes`)
+  }
+
   useEffect(() => {
     setRecipe()
   }, [recipeId])
@@ -49,6 +65,7 @@ const RecipeDetails = (props) => {
       <button onClick={() => props.showUpdateForm(recipeId)}>
         Edit Recipe
       </button>
+      <button onClick={() => deleteRecipe()}>Delete Recipe</button>
       <h1>{recipeDetails.name}</h1>
       {/* <img src={recipeDetails.image} alt="Recipe Image" /> */}
       <ul className="recipe-ingredients">
