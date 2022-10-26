@@ -46,6 +46,9 @@ const RecipeDetails = (props) => {
   return (
     <div>
       <h2>Recipe Details</h2>
+      <button onClick={() => props.showUpdateForm(recipeId)}>
+        Edit Recipe
+      </button>
       <h1>{recipeDetails.name}</h1>
       {/* <img src={recipeDetails.image} alt="Recipe Image" /> */}
       <ul className="recipe-ingredients">
@@ -59,7 +62,6 @@ const RecipeDetails = (props) => {
           <li key={index}>{step}</li>
         ))}
       </ol>
-      <button onClick={() => props.showUpdateForm(recipeId)}>Edit</button>
     </div>
   )
 }

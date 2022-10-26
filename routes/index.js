@@ -14,4 +14,6 @@ router.get('/ingredients/:searchTerm', controllers.searchRecipesByIngredient)
 
 router.post('/recipes', controllers.createNewRecipe)
 
+router.put('/recipes/:recipeId', controllers.updateRecipe)
+
 module.exports = router

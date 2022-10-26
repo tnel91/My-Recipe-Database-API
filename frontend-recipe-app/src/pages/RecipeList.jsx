@@ -1,5 +1,6 @@
 import axios from 'axios'
 import { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 
 import RecipeCard from '../components/RecipeCard'
 
@@ -25,6 +26,7 @@ const RecipeList = (props) => {
   return (
     <div>
       <h1>Recipe List</h1>
+      <Link to="/recipes/form">Create Recipe</Link>
       <div className="search"></div>
       <div className="results">
         <h2>Recipes</h2>

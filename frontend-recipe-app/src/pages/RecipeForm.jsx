@@ -1,7 +1,12 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { useParams, useNavigate } from 'react-router-dom'
+
 import axios from 'axios'
 
 const RecipeForm = (props) => {
+  let { recipeId } = useParams()
+  let navigate = useNavigate()
+
   const initialState = {
     name: '',
     description: '',
@@ -13,6 +18,7 @@ const RecipeForm = (props) => {
     url: '',
     notes: ''
   }
+
   const [formState, setFormState] = useState(initialState)
 
   const handleChange = (event) => {
@@ -21,22 +27,65 @@ const RecipeForm = (props) => {
 
   const handleSubmit = async (event) => {
     event.preventDefault()
-    let newRecipe = await axios
-      .post('http://localhost:3001/api/recipes', formState)
+    if (props.formType === 'update') {
+      let updatedRecipe = await axios
+        .put(`http://localhost:3001/api/recipes/${recipeId}`, formState)
+        .then((response) => {
+          return response
+        })
+        .catch((error) => {
+          console.log(error)
+        })
+      alert('Updated Recipe!')
+      console.log(`updated recipe`, updatedRecipe.data)
+      navigate(`/recipes/${recipeId}`)
+    } else {
+      let newRecipe = await axios
+        .post(`http://localhost:3001/api/recipes`, formState)
+        .then((response) => {
+          return response
+        })
+        .catch((error) => {
+          console.log(error)
+        })
+      alert('Added New Recipe!')
+      console.log(`created new recipe`, newRecipe.data)
+      setFormState(initialState)
+    }
+  }
+
+  const updateTemplate = async () => {
+    const recipe = await axios
+      .get(`http://localhost:3001/api/recipes/${recipeId}`)
       .then((response) => {
-        return response
+        return response.data
       })
       .catch((error) => {
         console.log(error)
       })
-    alert('Added New Recipe!')
-    console.log(`created new recipe`, newRecipe.data)
-    setFormState(initialState)
+    const recipeState = {
+      name: recipe.name,
+      description: recipe.description,
+      yield: recipe.yield,
+      totalTime: recipe.totalTime,
+      ingredients: recipe.ingredients,
+      instructions: recipe.instructions,
+      image: recipe.image,
+      url: recipe.url,
+      notes: recipe.notes
+    }
+    setFormState(recipeState)
   }
+
+  useEffect(() => {
+    if (props.formType === 'update') {
+      updateTemplate()
+    }
+  }, [recipeId])
 
   return (
     <div id="recipeFormDiv">
-      <h2 id="recipeFormHeading">Create Recipe</h2>
+      <h2 id="recipeFormHeading">{props.heading}</h2>
       <form id="recipeForm" onSubmit={handleSubmit}>
         <label htmlFor="name">Recipe Name:</label>
         <input id="name" onChange={handleChange} value={formState.name}></input>
@@ -85,7 +134,7 @@ const RecipeForm = (props) => {
           value={formState.notes}
         ></textarea>
         <button id="recipeSubmit" type="submit">
-          Submit
+          {props.submit}
         </button>
       </form>
       <div className="Response"></div>

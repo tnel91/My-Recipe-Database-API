@@ -62,10 +62,24 @@ const createNewRecipe = async (req, res) => {
   }
 }
 
+const updateRecipe = async (req, res) => {
+  try {
+    let updatedRecipe = await Recipe.findByIdAndUpdate(
+      req.params.recipeId,
+      req.body,
+      { new: true }
+    )
+    res.json(updatedRecipe)
+  } catch (error) {
+    return res.status(500).send(error.message)
+  }
+}
+
 module.exports = {
   getTwentyRecipes,
   getOneRecipe,
   searchRecipesByName,
   searchRecipesByIngredient,
-  createNewRecipe
+  createNewRecipe,
+  updateRecipe
 }

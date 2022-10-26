@@ -29,10 +29,25 @@ const App = () => {
             path="/recipes"
             element={<RecipeList showRecipeDetails={showRecipeDetails} />}
           />
-          <Route path="/recipes/form" element={<RecipeForm formType="new" />} />
+          <Route
+            path="/recipes/form"
+            element={
+              <RecipeForm
+                formType="new"
+                heading="Create New Recipe"
+                submit="Create Recipe"
+              />
+            }
+          />
           <Route
             path="/recipes/form/:recipeId"
-            element={<RecipeForm formType="update" />}
+            element={
+              <RecipeForm
+                formType="update"
+                heading="Update Recipe"
+                submit="Update Recipe"
+              />
+            }
           />
           <Route
             path="/recipes/:recipeId"
