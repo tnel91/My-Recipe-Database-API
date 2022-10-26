@@ -13,6 +13,9 @@ const Header = () => {
         <div className="navLink">
           <Link to="/recipes">Recipes</Link>
         </div>
+        <div className="navLink">
+          <Link to="/pantry">Pantry</Link>
+        </div>
       </nav>
     </header>
   )

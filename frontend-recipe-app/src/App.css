@@ -59,6 +59,12 @@ header nav a {
   
 }
 
+.ingredient-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 200px);
+  grid-gap: 1em
+}
+
 .recipe-card {
   border: 2px solid black;
 }
@@ -80,3 +86,4 @@ header nav a {
 .recipe-instructions {
   white-space: pre-line;
 }
+

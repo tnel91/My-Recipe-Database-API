@@ -55,7 +55,7 @@ const searchRecipesByIngredient = async (req, res) => {
 
 const createNewRecipe = async (req, res) => {
   try {
-    let createdRecipe = await Recipe.create(req.body)
+    const createdRecipe = await Recipe.create(req.body)
     res.status(200).json(createdRecipe)
   } catch (error) {
     return res.status(500).send(error.message)
@@ -64,7 +64,7 @@ const createNewRecipe = async (req, res) => {
 
 const updateRecipe = async (req, res) => {
   try {
-    let updatedRecipe = await Recipe.findByIdAndUpdate(
+    const updatedRecipe = await Recipe.findByIdAndUpdate(
       req.params.recipeId,
       req.body
       // { new: true }
@@ -77,8 +77,17 @@ const updateRecipe = async (req, res) => {
 
 const deleteRecipe = async (req, res) => {
   try {
-    let deletedRecipe = await Recipe.findByIdAndDelete(req.params.recipeId)
+    const deletedRecipe = await Recipe.findByIdAndDelete(req.params.recipeId)
     res.json(deletedRecipe)
+  } catch (error) {
+    return res.status(500).send(error.message)
+  }
+}
+
+const getTwentyIngredients = async (req, res) => {
+  try {
+    const ingredients = await Ingredient.find({}, {}, { limit: 20 })
+    res.status(200).json(ingredients)
   } catch (error) {
     return res.status(500).send(error.message)
   }
@@ -91,5 +100,6 @@ module.exports = {
   searchRecipesByIngredient,
   createNewRecipe,
   updateRecipe,
-  deleteRecipe
+  deleteRecipe,
+  getTwentyIngredients
 }

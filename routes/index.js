@@ -24,4 +24,6 @@ router.put('/recipes/:recipeId', controllers.updateRecipe)
 
 router.delete('/recipes/:recipeId', controllers.deleteRecipe)
 
+router.get('/pantry', controllers.getTwentyIngredients)
+
 module.exports = router
