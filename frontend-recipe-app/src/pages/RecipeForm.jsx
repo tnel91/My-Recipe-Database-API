@@ -86,7 +86,7 @@ const RecipeForm = (props) => {
       <h2 id="recipeFormHeading">{props.heading}</h2>
       <form id="recipeForm" onSubmit={handleSubmit}>
         <label htmlFor="name">Recipe Name:</label>
-        <input id="name" onChange={handleChange} value={formState.name}></input>
+        <input id="name" onChange={handleChange} value={formState.name} />
         <label htmlFor="description">Description: </label>
         <textarea
           id="description"
@@ -94,43 +94,31 @@ const RecipeForm = (props) => {
           value={formState.description}
         ></textarea>
         <label htmlFor="yield">Yield:</label>
-        <input
-          id="yield"
-          onChange={handleChange}
-          value={formState.yield}
-        ></input>
+        <input id="yield" onChange={handleChange} value={formState.yield} />
         <label htmlFor="totalTime">Total Time:</label>
         <input
           id="totalTime"
           onChange={handleChange}
           value={formState.totalTime}
-        ></input>
+        />
         <label htmlFor="ingredients">Ingredients:</label>
         <textarea
           id="ingredients"
           onChange={handleChange}
           value={formState.ingredients}
-        ></textarea>
+        />
         <label htmlFor="instructions">Instructions:</label>
         <textarea
           id="instructions"
           onChange={handleChange}
           value={formState.instructions}
-        ></textarea>
+        />
         <label htmlFor="image">Image:</label>
-        <input
-          id="image"
-          onChange={handleChange}
-          value={formState.image}
-        ></input>
+        <input id="image" onChange={handleChange} value={formState.image} />
         <label htmlFor="url">URL:</label>
-        <input id="url" onChange={handleChange} value={formState.url}></input>
+        <input id="url" onChange={handleChange} value={formState.url} />
         <label htmlFor="notes">Notes:</label>
-        <textarea
-          id="notes"
-          onChange={handleChange}
-          value={formState.notes}
-        ></textarea>
+        <textarea id="notes" onChange={handleChange} value={formState.notes} />
         <button id="recipeSubmit" type="submit">
           {props.submit}
         </button>
