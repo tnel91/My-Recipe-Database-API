@@ -4,13 +4,14 @@
   "description": "## Date: 10/19/2022",
   "main": "index.js",
   "engines": {
-    "node": "18.9.0"
+    "node": "18.9.0",
+    "npm": "8.19.1"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
     "dev": "nodemon server.js",
-    "build": "cd client && rm -rf build && npm install && npm run build"
+    "build": "cd frontend-recipe-app && rm -rf build && npm install && npm run build"
   },
   "repository": {
     "type": "git",
