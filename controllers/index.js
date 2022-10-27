@@ -106,6 +106,26 @@ const updateIngredient = async (req, res) => {
   }
 }
 
+const createNewIngredient = async (req, res) => {
+  try {
+    const createdIngredient = await Ingredient.create(req.body)
+    res.status(200).json(createdIngredient)
+  } catch (error) {
+    return res.status(500).send(error.message)
+  }
+}
+
+const deleteIngredient = async (req, res) => {
+  try {
+    const deleteIngredient = await Ingredient.findByIdAndDelete(
+      req.params.ingredientId
+    )
+    res.status(200).json(deleteIngredient)
+  } catch (error) {
+    return res.status(500).send(error.mesage)
+  }
+}
+
 module.exports = {
   getTwentyRecipes,
   getOneRecipe,
@@ -115,5 +135,7 @@ module.exports = {
   updateRecipe,
   deleteRecipe,
   getTwentyIngredients,
-  updateIngredient
+  updateIngredient,
+  createNewIngredient,
+  deleteIngredient
 }

@@ -28,4 +28,8 @@ router.get('/pantry', controllers.getTwentyIngredients)
 
 router.put('/ingredient/:ingredientId', controllers.updateIngredient)
 
+router.post('/ingredient', controllers.createNewIngredient)
+
+router.delete('/ingredient/:ingredientId', controllers.deleteIngredient)
+
 module.exports = router
