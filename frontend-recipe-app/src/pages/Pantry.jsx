@@ -56,8 +56,6 @@ const Pantry = () => {
   }
 
   const removeFromList = (id) => {
-    console.log('removed from list')
-    console.log(id)
     let index
     for (let i = 0; i < ingredients.length; i++) {
       if (ingredients[i]._id === id) {
