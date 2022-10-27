@@ -6,6 +6,11 @@ const IngredientCard = (props) => {
 
   const cardId = `cardId${ingredient._id}`
   const formId = `formId${ingredient._id}`
+  const nameId = `nameId${ingredient._id}`
+  const quantityId = `quantityId${ingredient._id}`
+  const unitId = `unitId${ingredient._id}`
+  const perishableId = `perishableId${ingredient._id}`
+  const imageId = `imageId${ingredient._id}`
 
   const editCard = () => {
     document.getElementById(cardId).style.display = 'none'
@@ -26,14 +31,14 @@ const IngredientCard = (props) => {
   })
 
   const handleChange = (event) => {
-    setFormState({ ...formState, [event.target.id]: event.target.value })
+    setFormState({ ...formState, [event.target.name]: event.target.value })
   }
 
   const handleCheckbox = (event) => {
     if (formState.perishable === false) {
-      setFormState({ ...formState, [event.target.id]: true })
+      setFormState({ ...formState, [event.target.name]: true })
     } else {
-      setFormState({ ...formState, [event.target.id]: false })
+      setFormState({ ...formState, [event.target.name]: false })
     }
   }
 
@@ -70,26 +75,39 @@ const IngredientCard = (props) => {
       <div id={formId} style={{ display: 'none' }} className="recipe-card">
         <h3>Editing Ingredient</h3>
         <form id="ingredientForm" onSubmit={handleSubmit}>
-          <label htmlFor="name">Name:</label>
-          <input id="name" onChange={handleChange} value={formState.name} />
-          <label htmlFor="quantity">Quantity:</label>
+          <label htmlFor={nameId}>Name:</label>
           <input
-            id="quantity"
+            id={nameId}
+            name="name"
+            onChange={handleChange}
+            value={formState.name}
+          />
+          <label htmlFor={quantityId}>Quantity:</label>
+          <input
+            id={quantityId}
+            name="quantity"
             onChange={handleChange}
             value={formState.quantity}
           />
-          <label htmlFor="unit">Unit:</label>
-          <input id="unit" onChange={handleChange} value={formState.unit} />
-          <label htmlFor="perishable">Perishable:</label>
+          <label htmlFor={unitId}>Unit:</label>
           <input
-            id="perishable"
+            id={unitId}
+            name="unit"
+            onChange={handleChange}
+            value={formState.unit}
+          />
+          <label htmlFor={perishableId}>Perishable:</label>
+          <input
+            id={perishableId}
+            name="perishable"
             onChange={handleCheckbox}
             checked={formState.perishable}
             type="checkbox"
           />
-          <label htmlFor="image">Image:</label>
+          <label htmlFor={imageId}>Image:</label>
           <input
-            id="image"
+            id={imageId}
+            name="image"
             onChange={handleChange}
             value={formState.image}
             type="url"

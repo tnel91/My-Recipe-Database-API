@@ -3,7 +3,6 @@ import { useState, useEffect } from 'react'
 
 import IngredientCard from '../components/IngredientCard'
 import PantrySearch from '../components/PantrySearch'
-import PantryForm from '../components/IngredientForm'
 
 const Pantry = () => {
   const [ingredients, setIngredients] = useState([])
