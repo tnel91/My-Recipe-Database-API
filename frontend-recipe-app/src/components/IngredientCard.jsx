@@ -1,18 +1,20 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import axios from 'axios'
 
 const IngredientCard = (props) => {
   const [ingredient, setIngredient] = useState(props.ingredient)
-  // const [edited, setEditState] = useState(false)
+
+  const cardId = `cardId${ingredient._id}`
+  const formId = `formId${ingredient._id}`
 
   const editCard = () => {
-    console.log('editing')
-    ///show form, hide card, thats it
+    document.getElementById(cardId).style.display = 'none'
+    document.getElementById(formId).style.display = ''
   }
 
   const revertCard = () => {
-    ///hide form, show card, thats it
-    // setEditState(true)
+    document.getElementById(cardId).style.display = ''
+    document.getElementById(formId).style.display = 'none'
   }
 
   const [formState, setFormState] = useState({
@@ -49,26 +51,11 @@ const IngredientCard = (props) => {
     revertCard()
   }
 
-  // const updateIngredient = async () => {
-  //   console.log('updating')
-  //   await axios.get().then().catch()
-  // }
-
-  // useEffect(() => {
-  //   console.log('fired')
-  //   if (edited === false) {
-  //     console.log('false')
-  //     return
-  //   } else if (edited === true) {
-  //     console.log('true')
-  //     updateIngredient()
-  //   }
-  // }, [ingredient.updatedAt])
-
   return (
     <div>
       <div
-        style={{ visibility: 'hidden' }}
+        id={cardId}
+        style={{ display: '' }}
         className="recipe-card"
         onClick={() => editCard()}
       >
@@ -80,7 +67,7 @@ const IngredientCard = (props) => {
         <p>{ingredient.unit}</p>
         <p>{ingredient.perishable}</p>
       </div>
-      <div style={{ visibility: 'visible' }} className="recipe-card">
+      <div id={formId} style={{ display: 'none' }} className="recipe-card">
         <h3>Editing Ingredient</h3>
         <form id="ingredientForm" onSubmit={handleSubmit}>
           <label htmlFor="name">Name:</label>
