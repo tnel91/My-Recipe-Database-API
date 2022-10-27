@@ -1,8 +1,8 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 const IngredientCard = (props) => {
   const [cardState, setCardState] = useState(
-    <div>
+    <div className="recipe-card" onClick={() => editCard()}>
       <div className="img-wrapper">
         <img src={props.image} alt="Recipe Image" />
       </div>
@@ -13,48 +13,56 @@ const IngredientCard = (props) => {
     </div>
   )
 
-  const initialState = {
-    name: props.name,
-    quantity: props.quantity,
-    unit: props.unit,
-    perishable: props.perishable,
-    image: props.image
-  }
+  // const [formState, setFormState] = useState({
+  //   name: props.name,
+  //   quantity: props.quantity,
+  //   unit: props.unit,
+  //   perishable: props.perishable,
+  //   image: props.image
+  // })
 
-  const [formState, setFormState] = useState(initialState)
-
-  const handleSubmit = () => {
-    console.log('submitted')
-  }
+  const [formState, setFormState] = useState({
+    name: 'help',
+    quantity: 'banana',
+    unit: 'aaaaaa',
+    perishable: 'ad',
+    image: 'aaaAAAAAA'
+  })
 
   const handleChange = (event) => {
     setFormState({ ...formState, [event.target.id]: event.target.value })
   }
 
+  const handleSubmit = (event) => {
+    event.preventDefault()
+    console.log('submitted')
+  }
+
   const editCard = () => {
+    console.log('editing card')
     setCardState(
-      <div>
+      <div className="recipe-card">
         <h3>Editing Ingredient</h3>
-        <form onSubmit={handleSubmit}>
+        <form id="ingredientForm" onSubmit={handleSubmit}>
           <label htmlFor="name">Name:</label>
           <input
             id="name"
-            value={formState.name}
             onChange={handleChange}
+            value={formState.name}
           ></input>
           <label htmlFor="quantity">Quantity:</label>
           <input
             id="quantity"
-            value={formState.quantity}
             onChange={handleChange}
+            value={formState.quantity}
           ></input>
           <label htmlFor="unit">Unit:</label>
           <input
             id="unit"
-            value={formState.unit}
             onChange={handleChange}
+            value={formState.unit}
           ></input>
-          <label htmlFor="perishable">Perishable:</label>
+          {/* <label htmlFor="perishable">Perishable:</label>
           <input
             id="perishable"
             value={formState.perishable}
@@ -63,21 +71,17 @@ const IngredientCard = (props) => {
           <label htmlFor="image">Image:</label>
           <input
             id="image"
+            onChange={handleChange}
             value={formState.image}
             type="url"
-            onChange={handleChange}
-          ></input>
+          ></input> */}
           <button type="submit">Edit</button>
         </form>
       </div>
     )
   }
 
-  return (
-    <div className="recipe-card" onClick={() => editCard(props.id)}>
-      {cardState}
-    </div>
-  )
+  return <div>{cardState}</div>
 }
 
 export default IngredientCard

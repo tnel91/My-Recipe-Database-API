@@ -9,6 +9,7 @@ const Pantry = () => {
   const [ingredients, setIngredients] = useState([])
 
   const getIngredients = async () => {
+    console.log('aaaaaaaaaa')
     const ingredients = await axios
       .get('http://localhost:3001/api/pantry')
       .then((response) => {
