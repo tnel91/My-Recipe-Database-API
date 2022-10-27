@@ -2,7 +2,7 @@ import { useState } from 'react'
 import axios from 'axios'
 
 const IngredientForm = (props) => {
-  const ing = props.ing
+  const ing = props.ingredient
 
   const [formState, setFormState] = useState({
     name: ing.name,
