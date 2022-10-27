@@ -1,6 +1,7 @@
 import { useState } from 'react'
+import axios from 'axios'
 
-const PantryForm = (props) => {
+const IngredientForm = (props) => {
   const ing = props.ing
 
   const [formState, setFormState] = useState({
@@ -12,7 +13,6 @@ const PantryForm = (props) => {
   })
 
   const handleChange = (event) => {
-    console.log('clicked')
     setFormState({ ...formState, [event.target.id]: event.target.value })
   }
 
@@ -23,9 +23,17 @@ const PantryForm = (props) => {
       setFormState({ ...formState, [event.target.id]: false })
     }
   }
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault()
-    console.log('submitted')
+    const response = await axios
+      .put(`http://localhost:3001/api/ingredient/${ing._id}`, formState)
+      .then((response) => {
+        return response.data
+      })
+      .catch((error) => {
+        console.log(error)
+      })
+    props.revertCard(response)
   }
 
   return (
@@ -62,4 +70,4 @@ const PantryForm = (props) => {
   )
 }
 
-export default PantryForm
+export default IngredientForm

@@ -66,8 +66,8 @@ const updateRecipe = async (req, res) => {
   try {
     const updatedRecipe = await Recipe.findByIdAndUpdate(
       req.params.recipeId,
-      req.body
-      // { new: true }
+      req.body,
+      { new: true }
     )
     res.status(200).json(updatedRecipe)
   } catch (error) {
@@ -93,6 +93,19 @@ const getTwentyIngredients = async (req, res) => {
   }
 }
 
+const updateIngredient = async (req, res) => {
+  try {
+    const ingredient = await Ingredient.findByIdAndUpdate(
+      req.params.ingredientId,
+      req.body,
+      { new: true }
+    )
+    res.status(200).json(ingredient)
+  } catch (error) {
+    return res.status(500).send(error.message)
+  }
+}
+
 module.exports = {
   getTwentyRecipes,
   getOneRecipe,
@@ -101,5 +114,6 @@ module.exports = {
   createNewRecipe,
   updateRecipe,
   deleteRecipe,
-  getTwentyIngredients
+  getTwentyIngredients,
+  updateIngredient
 }
