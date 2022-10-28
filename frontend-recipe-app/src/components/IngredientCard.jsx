@@ -70,6 +70,14 @@ const IngredientCard = (props) => {
     }
   }
 
+  let perishable
+
+  if (ingredient.perishable === true) {
+    perishable = 'perishable'
+  } else {
+    perishable = 'non-perishable'
+  }
+
   return (
     <div>
       <div
@@ -82,9 +90,8 @@ const IngredientCard = (props) => {
           <img src={ingredient.image} alt="Recipe Image" />
         </div>
         <h3>{ingredient.name}</h3>
-        <p>{ingredient.quantity}</p>
-        <p>{ingredient.unit}</p>
-        <p>{ingredient.perishable}</p>
+        <p>{ingredient.quantity + ' ' + ingredient.unit}</p>
+        <p>{perishable}</p>
       </div>
       <div id={formId} style={{ display: 'none' }} className="recipe-card">
         <h3>Editing Ingredient</h3>
