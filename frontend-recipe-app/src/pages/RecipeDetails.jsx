@@ -60,24 +60,33 @@ const RecipeDetails = (props) => {
 
   return (
     <div>
-      <h2>Recipe Details</h2>
-      <button onClick={() => props.showUpdateForm(recipeId)}>
+      <button
+        className="recipe-details-button"
+        onClick={() => props.showUpdateForm(recipeId)}
+      >
         Edit Recipe
       </button>
-      <button onClick={() => deleteRecipe()}>Delete Recipe</button>
+      <button className="recipe-details-button" onClick={() => deleteRecipe()}>
+        Delete Recipe
+      </button>
       <h1>{recipeDetails.name}</h1>
-      <img src={recipeDetails.image} alt="Recipe Image" />
-      <ul className="recipe-ingredients">
-        {recipeDetails.ingredients.map((ingredient, index) => (
-          <li key={index}>{ingredient}</li>
-        ))}
-      </ul>
-      <br />
-      <ol className="recipe-instructions">
-        {recipeDetails.instructions.map((step, index) => (
-          <li key={index}>{step}</li>
-        ))}
-      </ol>
+      <div className="recipe-details">
+        <img
+          className="recipe-image"
+          src={recipeDetails.image}
+          alt="Recipe Image"
+        />
+        <ul className="recipe-ingredients">
+          {recipeDetails.ingredients.map((ingredient, index) => (
+            <li key={index}>{ingredient}</li>
+          ))}
+        </ul>
+        <ol className="recipe-instructions">
+          {recipeDetails.instructions.map((step, index) => (
+            <li key={index}>{step}</li>
+          ))}
+        </ol>
+      </div>
     </div>
   )
 }

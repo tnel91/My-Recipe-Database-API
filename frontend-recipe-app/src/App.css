@@ -27,6 +27,14 @@ nav a {
   text-decoration: none;
 }
 
+.create-recipe-button a {
+  font-size: large;
+  text-align: center;
+  line-height: 60px;
+  width: 90px;
+  text-decoration: none;
+}
+
 nav a:hover {
   box-shadow: 0 0 3px 1px black ;
 }
@@ -49,20 +57,19 @@ nav a:visited {
   /* width: 50%; */
   align-content: center;
   /* margin: auto; */
-  margin: 0em 8em
+  margin: 0em 8em 0em 0em
 }
 
 #recipeFormHeading {
   text-align: center;
-  /* text-justify: distribute; */
-  color: red;
-  grid-column: 1 / 3;
+  /* grid-column: 1 / 3; */
 }
 
 #recipeForm {
   display: grid;
   grid-template: 2em 10em 2em 2em 15em 20em 2em 2em 10em 3em / 30% 70%;
   text-align: right;
+  grid-gap: 2px
 }
 
 label {
@@ -71,8 +78,8 @@ label {
 }
 
 #recipeSubmit {
-  background-color: aquamarine;
-  grid-column: 1 / 3;
+  background-color: rgb(200, 200, 200);
+  grid-column: 2 / 3;
 }
 
 /* /////////////////// */
@@ -93,6 +100,7 @@ label {
 .card {
   border: 2px solid black;
   background-color: rgb(200, 200, 200);
+  text-align: center;
 }
 
 .card.recipe {
@@ -119,13 +127,40 @@ label {
   height: 100%;
   width: 100%;
   object-fit: cover;
-  /* object-fit: fill; */
-  /* display: block; */
-  /* margin-left: auto; */
-  /* margin-right: auto; */
 }
 
-/* //////////////////////////////////////// */
+.ingredient-form {
+  height: fill;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.checkbox {
+  width: 17px;
+  height: 17px;
+}
+
+/* Recipe Detail Styling */
+
+.recipe-details {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.recipe-details-button {
+  margin: 5px;
+  height: 3em;
+  width: 10em;
+  background-color:rgb(200, 200, 200)
+}
+
+
+
+.recipe-image {
+  max-height: 300px;
+  border: 1px solid black;
+}
 
 .recipe-ingredients {
   white-space: pre-line;

@@ -1,11 +1,13 @@
 import axios from 'axios'
 import { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 import RecipeSearch from '../components/RecipeSearch'
 import RecipeCard from '../components/RecipeCard'
 
 const RecipeList = (props) => {
+  let navigate = useNavigate()
+
   const [recipes, setRecipes] = useState([])
   const [searchQuery, setSearchQuery] = useState({
     searchType: 'Name',
@@ -57,14 +59,19 @@ const RecipeList = (props) => {
     }
   }
 
+  const showCreateForm = () => {
+    navigate('/recipes/form')
+  }
+
   useEffect(() => {
     getRecipes()
   }, [])
 
   return (
     <div>
-      <h1>Recipe List</h1>
-      <Link to="/recipes/form">Create Recipe</Link>
+      <button className="recipe-details-button" onClick={showCreateForm}>
+        Create New Recipe
+      </button>
       <div className="search">
         <RecipeSearch
           handleChange={handleChange}
@@ -73,7 +80,7 @@ const RecipeList = (props) => {
         />
       </div>
       <div className="results">
-        <h2>Recipes</h2>
+        <h2>Recipe List</h2>
         <section className="recipe-grid">
           {recipes.map((recipe) => (
             <div key={recipe._id}>

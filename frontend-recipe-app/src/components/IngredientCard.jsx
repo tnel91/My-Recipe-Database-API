@@ -94,49 +94,63 @@ const IngredientCard = (props) => {
         <p>{perishable}</p>
       </div>
       <div id={formId} style={{ display: 'none' }} className="ingredient card">
-        <h3>Editing Ingredient</h3>
-        <form id="ingredientForm" onSubmit={handleSubmit}>
-          <label htmlFor={nameId}>Name:</label>
-          <input
-            id={nameId}
-            name="name"
-            onChange={handleChange}
-            value={formState.name}
-          />
-          <label htmlFor={quantityId}>Quantity:</label>
-          <input
-            id={quantityId}
-            name="quantity"
-            onChange={handleChange}
-            value={formState.quantity}
-          />
-          <label htmlFor={unitId}>Unit:</label>
-          <input
-            id={unitId}
-            name="unit"
-            onChange={handleChange}
-            value={formState.unit}
-          />
-          <label htmlFor={perishableId}>Perishable:</label>
-          <input
-            id={perishableId}
-            name="perishable"
-            onChange={handleCheckbox}
-            checked={formState.perishable}
-            type="checkbox"
-          />
-          <label htmlFor={imageId}>Image:</label>
-          <input
-            id={imageId}
-            name="image"
-            onChange={handleChange}
-            value={formState.image}
-            type="url"
-          />
-          <button type="submit">Edit</button>
+        <form className="ingredient-form" onSubmit={handleSubmit}>
+          <div>
+            <label htmlFor={nameId}>Name:</label>
+            <input
+              id={nameId}
+              name="name"
+              onChange={handleChange}
+              value={formState.name}
+            />
+          </div>
+          <div>
+            <label htmlFor={quantityId}>Quantity:</label>
+            <input
+              id={quantityId}
+              name="quantity"
+              onChange={handleChange}
+              value={formState.quantity}
+            />
+          </div>
+          <div>
+            <label htmlFor={unitId}>Unit:</label>
+            <input
+              id={unitId}
+              name="unit"
+              onChange={handleChange}
+              value={formState.unit}
+            />
+          </div>
+          <div>
+            <label htmlFor={perishableId}>Perishable:</label>
+            <input
+              className="checkbox"
+              id={perishableId}
+              name="perishable"
+              onChange={handleCheckbox}
+              checked={formState.perishable}
+              type="checkbox"
+            />
+          </div>
+          <div>
+            <label htmlFor={imageId}>Image:</label>
+            <input
+              id={imageId}
+              name="image"
+              onChange={handleChange}
+              value={formState.image}
+              type="url"
+            />
+          </div>
+          <button type="submit">Edit Ingredient</button>
+          <button type="button" onClick={revertCard}>
+            Cancel Changes
+          </button>
+          <button type="button" onClick={deleteIngredient}>
+            Delete Ingredient
+          </button>
         </form>
-        <button onClick={revertCard}>Cancel</button>
-        <button onClick={deleteIngredient}>Delete</button>
       </div>
     </div>
   )
