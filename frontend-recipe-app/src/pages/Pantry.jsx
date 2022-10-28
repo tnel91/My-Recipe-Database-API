@@ -8,15 +8,14 @@ const Pantry = () => {
   const [ingredients, setIngredients] = useState([])
 
   const getIngredients = async () => {
-    const ingredients = await axios
+    await axios
       .get('http://localhost:3001/api/pantry')
       .then((response) => {
-        return response.data
+        setIngredients(response.data)
       })
       .catch((error) => {
         console.log(error)
       })
-    setIngredients(ingredients)
   }
 
   const initialState = {
@@ -47,12 +46,11 @@ const Pantry = () => {
       .post(`http://localhost:3001/api/ingredient`, formState)
       .then((response) => {
         setIngredients([response.data, ...ingredients])
+        setFormState(initialState)
       })
       .catch((error) => {
-        console.log(error)
         alert(error.response.data)
       })
-    setFormState(initialState)
   }
 
   const removeFromList = (id) => {

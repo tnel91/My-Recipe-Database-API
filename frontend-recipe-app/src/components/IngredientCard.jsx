@@ -57,16 +57,17 @@ const IngredientCard = (props) => {
   }
 
   const deleteIngredient = async () => {
-    console.log('deleted')
-    const response = await axios
-      .delete(`http://localhost:3001/api/ingredient/${ingredient._id}`)
-      .then((response) => {
-        return response.data
-      })
-      .catch((error) => {
-        console.log(error)
-      })
-    props.removeFromList(ingredient._id)
+    let confirm = window.confirm('Delete ingredient forever?')
+    if (confirm === true) {
+      await axios
+        .delete(`http://localhost:3001/api/ingredient/${ingredient._id}`)
+        .then(() => {
+          props.removeFromList(ingredient._id)
+        })
+        .catch((error) => {
+          console.log(error)
+        })
+    }
   }
 
   return (

@@ -28,17 +28,15 @@ const RecipeForm = (props) => {
   const handleSubmit = async (event) => {
     event.preventDefault()
     if (props.updateForm) {
-      let updatedRecipe = await axios
+      await axios
         .put(`http://localhost:3001/api/recipes/${recipeId}`, formState)
-        .then((response) => {
-          return response.data
+        .then(() => {
+          navigate(`/recipes/${recipeId}`)
         })
         .catch((error) => {
           console.log(error)
           alert(error.response.data)
         })
-      console.log(`updated recipe`, updatedRecipe)
-      navigate(`/recipes/${recipeId}`)
     } else {
       await axios
         .post(`http://localhost:3001/api/recipes`, formState)
@@ -49,7 +47,6 @@ const RecipeForm = (props) => {
           console.log(error)
           alert(error.response.data)
         })
-      setFormState(initialState)
     }
   }
 

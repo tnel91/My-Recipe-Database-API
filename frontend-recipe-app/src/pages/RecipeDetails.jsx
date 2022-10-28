@@ -41,16 +41,17 @@ const RecipeDetails = (props) => {
   }
 
   const deleteRecipe = async () => {
-    const deletedRecipe = await axios
-      .delete(`http://localhost:3001/api/recipes/${recipeId}`)
-      .then((res) => {
-        return res.data
-      })
-      .catch((error) => {
-        console.log(error)
-      })
-    alert('Deleted Recipe')
-    navigate(`/recipes`)
+    let confirm = window.confirm('Delete recipe forever?')
+    if (confirm === true) {
+      await axios
+        .delete(`http://localhost:3001/api/recipes/${recipeId}`)
+        .then(() => {
+          navigate(`/recipes`)
+        })
+        .catch((error) => {
+          console.log(error)
+        })
+    }
   }
 
   useEffect(() => {
