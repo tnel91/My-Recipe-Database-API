@@ -83,17 +83,17 @@ const IngredientCard = (props) => {
       <div
         id={cardId}
         style={{ display: '' }}
-        className="recipe-card"
+        className="ingredient card"
         onClick={() => editCard()}
       >
         <div className="img-wrapper">
-          <img src={ingredient.image} alt="Recipe Image" />
+          <img src={ingredient.image} alt="Ingredient Image" />
         </div>
         <h3>{ingredient.name.toUpperCase()}</h3>
         <p>{ingredient.quantity + ' ' + ingredient.unit}</p>
         <p>{perishable}</p>
       </div>
-      <div id={formId} style={{ display: 'none' }} className="recipe-card">
+      <div id={formId} style={{ display: 'none' }} className="ingredient card">
         <h3>Editing Ingredient</h3>
         <form id="ingredientForm" onSubmit={handleSubmit}>
           <label htmlFor={nameId}>Name:</label>

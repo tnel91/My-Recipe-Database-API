@@ -13,15 +13,14 @@ const RecipeList = (props) => {
   })
 
   const getRecipes = async () => {
-    const response = await axios
+    await axios
       .get('http://localhost:3001/api/recipes')
       .then((response) => {
-        return response.data
+        setRecipes(response.data)
       })
       .catch((error) => {
         console.log(error)
       })
-    setRecipes(response)
   }
 
   const handleChange = (event) => {
@@ -31,32 +30,31 @@ const RecipeList = (props) => {
   const handleSubmit = async (event) => {
     event.preventDefault()
     if (searchQuery.searchType === 'Name') {
-      const results = await axios
+      await axios
         .get(
           `http://localhost:3001/api/recipe_search_by_name/${searchQuery.query}`
         )
         .then((response) => {
-          return response.data
+          setRecipes(response.data)
+          setSearchQuery({ ...searchQuery, query: '' })
         })
         .catch((error) => {
           console.log(error)
         })
-      setRecipes(results)
     }
     if (searchQuery.searchType === 'Ingredients') {
-      const results = await axios
+      await axios
         .get(
           `http://localhost:3001/api/recipe_search_by_ingr/${searchQuery.query}`
         )
         .then((response) => {
-          return response.data
+          setRecipes(response.data)
+          setSearchQuery({ ...searchQuery, query: '' })
         })
         .catch((error) => {
           console.log(error)
         })
-      setRecipes(results)
     }
-    setSearchQuery({ ...searchQuery, query: '' })
   }
 
   useEffect(() => {
