@@ -34,7 +34,6 @@ const RecipeForm = (props) => {
           navigate(`/recipes/${recipeId}`)
         })
         .catch((error) => {
-          console.log(error)
           alert(error.response.data)
         })
     } else {
@@ -44,7 +43,6 @@ const RecipeForm = (props) => {
           navigate(`/recipes/${response.data._id}`)
         })
         .catch((error) => {
-          console.log(error)
           alert(error.response.data)
         })
     }

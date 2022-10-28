@@ -4,6 +4,14 @@ import axios from 'axios'
 const IngredientCard = (props) => {
   const [ingredient, setIngredient] = useState(props.ingredient)
 
+  const [formState, setFormState] = useState({
+    name: ingredient.name,
+    quantity: ingredient.quantity,
+    unit: ingredient.unit,
+    perishable: ingredient.perishable,
+    image: ingredient.image
+  })
+
   const cardId = `cardId${ingredient._id}`
   const formId = `formId${ingredient._id}`
   const nameId = `nameId${ingredient._id}`
@@ -21,14 +29,6 @@ const IngredientCard = (props) => {
     document.getElementById(cardId).style.display = ''
     document.getElementById(formId).style.display = 'none'
   }
-
-  const [formState, setFormState] = useState({
-    name: ingredient.name,
-    quantity: ingredient.quantity,
-    unit: ingredient.unit,
-    perishable: ingredient.perishable,
-    image: ingredient.image
-  })
 
   const handleChange = (event) => {
     setFormState({ ...formState, [event.target.name]: event.target.value })
@@ -89,7 +89,7 @@ const IngredientCard = (props) => {
         <div className="img-wrapper">
           <img src={ingredient.image} alt="Recipe Image" />
         </div>
-        <h3>{ingredient.name}</h3>
+        <h3>{ingredient.name.toUpperCase()}</h3>
         <p>{ingredient.quantity + ' ' + ingredient.unit}</p>
         <p>{perishable}</p>
       </div>

@@ -86,7 +86,11 @@ const deleteRecipe = async (req, res) => {
 
 const getTwentyIngredients = async (req, res) => {
   try {
-    const ingredients = await Ingredient.find({}, {}, { limit: 20 })
+    const ingredients = await Ingredient.find(
+      {},
+      {},
+      { limit: 20, sort: { _id: -1 } }
+    )
     res.status(200).json(ingredients)
   } catch (error) {
     return res.status(500).send(error.message)
