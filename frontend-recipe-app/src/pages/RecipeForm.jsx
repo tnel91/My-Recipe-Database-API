@@ -35,20 +35,21 @@ const RecipeForm = (props) => {
         })
         .catch((error) => {
           console.log(error)
+          alert(error.response.data)
         })
       console.log(`updated recipe`, updatedRecipe)
       navigate(`/recipes/${recipeId}`)
     } else {
-      let newRecipe = await axios
+      await axios
         .post(`http://localhost:3001/api/recipes`, formState)
         .then((response) => {
-          return response.data
+          navigate(`/recipes/${response.data._id}`)
         })
         .catch((error) => {
           console.log(error)
+          alert(error.response.data)
         })
       setFormState(initialState)
-      navigate(`/recipes/${newRecipe._id}`)
     }
   }
 

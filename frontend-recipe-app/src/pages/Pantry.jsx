@@ -43,16 +43,16 @@ const Pantry = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault()
-    const response = await axios
+    await axios
       .post(`http://localhost:3001/api/ingredient`, formState)
       .then((response) => {
-        return response.data
+        setIngredients([response.data, ...ingredients])
       })
       .catch((error) => {
         console.log(error)
+        alert(error.response.data)
       })
     setFormState(initialState)
-    setIngredients([response, ...ingredients])
   }
 
   const removeFromList = (id) => {

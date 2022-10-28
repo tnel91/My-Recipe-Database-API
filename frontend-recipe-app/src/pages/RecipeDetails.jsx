@@ -41,7 +41,6 @@ const RecipeDetails = (props) => {
   }
 
   const deleteRecipe = async () => {
-    console.log('clicked')
     const deletedRecipe = await axios
       .delete(`http://localhost:3001/api/recipes/${recipeId}`)
       .then((res) => {
@@ -51,7 +50,6 @@ const RecipeDetails = (props) => {
         console.log(error)
       })
     alert('Deleted Recipe')
-    console.log('deleted recipe', deletedRecipe)
     navigate(`/recipes`)
   }
 
