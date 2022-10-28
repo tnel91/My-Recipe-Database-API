@@ -1,6 +1,6 @@
 const { Recipe, Ingredient } = require('../models')
 
-const getTwentyRecipes = async (req, res) => {
+const getManyRecipes = async (req, res) => {
   try {
     const recipes = await Recipe.find({}, {}, { limit: 20 })
     res.status(200).json(recipes)
@@ -84,12 +84,12 @@ const deleteRecipe = async (req, res) => {
   }
 }
 
-const getTwentyIngredients = async (req, res) => {
+const getManyIngredients = async (req, res) => {
   try {
     const ingredients = await Ingredient.find(
       {},
       {},
-      { limit: 20, sort: { _id: -1 } }
+      { limit: 40, sort: { _id: -1 } }
     )
     res.status(200).json(ingredients)
   } catch (error) {
@@ -131,14 +131,14 @@ const deleteIngredient = async (req, res) => {
 }
 
 module.exports = {
-  getTwentyRecipes,
+  getManyRecipes,
   getOneRecipe,
   searchRecipesByName,
   searchRecipesByIngredient,
   createNewRecipe,
   updateRecipe,
   deleteRecipe,
-  getTwentyIngredients,
+  getManyIngredients,
   updateIngredient,
   createNewIngredient,
   deleteIngredient

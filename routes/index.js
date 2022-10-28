@@ -2,9 +2,7 @@ const { Router } = require('express')
 const controllers = require('../controllers')
 const router = Router()
 
-// router.get('/', (req, res) => res.json(`This route is being hit`))
-
-router.get('/recipes', controllers.getTwentyRecipes)
+router.get('/recipes', controllers.getManyRecipes)
 
 router.get('/recipes/:recipeId', controllers.getOneRecipe)
 
@@ -24,11 +22,11 @@ router.put('/recipes/:recipeId', controllers.updateRecipe)
 
 router.delete('/recipes/:recipeId', controllers.deleteRecipe)
 
-router.get('/pantry', controllers.getTwentyIngredients)
-
-router.put('/ingredient/:ingredientId', controllers.updateIngredient)
+router.get('/pantry', controllers.getManyIngredients)
 
 router.post('/ingredient', controllers.createNewIngredient)
+
+router.put('/ingredient/:ingredientId', controllers.updateIngredient)
 
 router.delete('/ingredient/:ingredientId', controllers.deleteIngredient)
 
