@@ -54,6 +54,10 @@ const RecipeDetails = (props) => {
     }
   }
 
+  const showUpdateForm = (id) => {
+    navigate(`/recipes/form/${id}`)
+  }
+
   useEffect(() => {
     setRecipe()
   }, [recipeId])
@@ -62,7 +66,7 @@ const RecipeDetails = (props) => {
     <div>
       <button
         className="recipe-details-button"
-        onClick={() => props.showUpdateForm(recipeId)}
+        onClick={() => showUpdateForm(recipeId)}
       >
         Edit Recipe
       </button>

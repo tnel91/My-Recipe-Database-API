@@ -59,6 +59,10 @@ const RecipeList = (props) => {
     }
   }
 
+  const showRecipeDetails = (id) => {
+    navigate(`/recipes/${id}`)
+  }
+
   const showCreateForm = () => {
     navigate('/recipes/form')
   }
@@ -90,7 +94,7 @@ const RecipeList = (props) => {
                 yield={recipe.yield}
                 totalTime={recipe.totalTime}
                 image={recipe.image}
-                onClick={props.showRecipeDetails}
+                onClick={showRecipeDetails}
               />
             </div>
           ))}

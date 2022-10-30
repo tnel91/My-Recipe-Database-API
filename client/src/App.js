@@ -1,5 +1,5 @@
 import './App.css'
-import { Routes, Route, useNavigate } from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom'
 import Header from './components/Header'
 import Home from './pages/Home'
 import About from './pages/About'
@@ -9,16 +9,6 @@ import RecipeDetails from './pages/RecipeDetails'
 import Pantry from './pages/Pantry'
 
 const App = () => {
-  let navigate = useNavigate()
-
-  const showRecipeDetails = (id) => {
-    navigate(`/recipes/${id}`)
-  }
-
-  const showUpdateForm = (id) => {
-    navigate(`/recipes/form/${id}`)
-  }
-
   return (
     <div className="App">
       <Header />
@@ -26,10 +16,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
-          <Route
-            path="/recipes"
-            element={<RecipeList showRecipeDetails={showRecipeDetails} />}
-          />
+          <Route path="/recipes" element={<RecipeList />} />
           <Route
             path="/recipes/form"
             element={
@@ -46,10 +33,7 @@ const App = () => {
               />
             }
           />
-          <Route
-            path="/recipes/:recipeId"
-            element={<RecipeDetails showUpdateForm={showUpdateForm} />}
-          />
+          <Route path="/recipes/:recipeId" element={<RecipeDetails />} />
           <Route path="/pantry" element={<Pantry />} />
         </Routes>
       </main>
