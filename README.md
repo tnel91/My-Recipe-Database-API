@@ -4,7 +4,7 @@
 
 ### By: Travis Nelson
 
-#### [GitHub](https://github.com/tnel91/Travis_Recipe_App) | [LinkedIn](https://www.linkedin.com/in/travis-nelson91/) | [Trello](https://trello.com/b/m0n2neWP/travis-recipe-app)
+#### [GitHub](https://github.com/tnel91/Travis_Recipe_App) | [LinkedIn](https://www.linkedin.com/in/travis-nelson91/) | [Trello](https://trello.com/b/m0n2neWP/travis-recipe-app) | [Heroku Deployment](https://recipedb-app.herokuapp.com/)
 
 ---
 
@@ -19,16 +19,42 @@ The plan is to create an app that allows a user to create recipes and upload the
 - Visual Studio Code
 - Git/Github
 - MongoDB
+- Mongoose
 - Express
 - React
+- Heroku
 
 ---
 
 ### **_Getting Started_**
 
+#### _Production_
+
+- Navigate to the [Heroku Deployment](https://recipedb-app.herokuapp.com/) page.
+- Note: The Heroku deployment currently only comunicates with the server if it is runing in the local environment.
+
+#### _Development_
+
+- `Fork` and `Clone` this repo
+- `cd` into directory
+- run `npm install`
+- Create a `.env` file in the root of the directory and insert your `MONGODB_URI` connection string.
+
 ---
 
-### **Project Guidelines**
+### **_Screenshots_**
+
+#### _Recipe List Page_
+
+![Recipe List Page](https://i.imgur.com/ebEvK8J.png)
+
+#### _Pantry Page_
+
+![Pantry Page](https://i.imgur.com/QY5VpLF.png)
+
+---
+
+### **_Project Guidelines_**
 
 #### **Frontend**
 
@@ -54,8 +80,16 @@ The plan is to create an app that allows a user to create recipes and upload the
 
 ---
 
+### **_Future Updates_**
+
+- Implement search/filter functionality on pantry ingredients.
+
+---
+
 ### Credits
 
 ##### Project Prompt: [Github](https://github.com/SEI-R-9-19/u2_project_prompt)
 
 ##### Image Hosting [Imgur](https://imgur.com/)
+
+##### Search Engine [Google](http://google.com)
