@@ -18,11 +18,12 @@ const RecipeSearch = (props) => {
             onChange={props.handleChange}
             value={props.query}
             placeholder="Search Recipes"
+            required
           />
         </div>
-        <button className="butto" type="submit">
-          Find Recipes
-        </button>
+        <div>
+          <button type="submit">Find Recipes</button>
+        </div>
       </form>
     </div>
   )

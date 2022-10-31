@@ -102,6 +102,9 @@ const IngredientCard = (props) => {
               name="name"
               onChange={handleChange}
               value={formState.name}
+              size="17"
+              placeholder="required"
+              required
             />
           </div>
           <div>
@@ -111,6 +114,9 @@ const IngredientCard = (props) => {
               name="quantity"
               onChange={handleChange}
               value={formState.quantity}
+              size="14"
+              placeholder="required"
+              required
             />
           </div>
           <div>
@@ -120,6 +126,7 @@ const IngredientCard = (props) => {
               name="unit"
               onChange={handleChange}
               value={formState.unit}
+              size="18"
             />
           </div>
           <div>
@@ -141,6 +148,7 @@ const IngredientCard = (props) => {
               onChange={handleChange}
               value={formState.image}
               type="url"
+              size="17"
             />
           </div>
           <button type="submit">Edit Ingredient</button>

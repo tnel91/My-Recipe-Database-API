@@ -87,6 +87,7 @@ const RecipeForm = (props) => {
           onChange={handleChange}
           value={formState.name}
           placeholder="required"
+          required
         />
         <label htmlFor="description">Description: </label>
         <textarea
@@ -108,6 +109,7 @@ const RecipeForm = (props) => {
           onChange={handleChange}
           value={formState.ingredients}
           placeholder="required"
+          required
         />
         <label htmlFor="instructions">Instructions:</label>
         <textarea
@@ -115,6 +117,7 @@ const RecipeForm = (props) => {
           onChange={handleChange}
           value={formState.instructions}
           placeholder="required"
+          required
         />
         <label htmlFor="image">Image:</label>
         <input id="image" onChange={handleChange} value={formState.image} />

@@ -148,10 +148,12 @@ label {
 }
 
 .ingredient-form {
+  margin-left: .2em;
+  margin-right: .2em;
   height: fill;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-evenly;
 }
 
 .checkbox {
@@ -162,10 +164,18 @@ label {
 #newIngredientForm,#searchForm {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
-  align-items: flex-end;
   margin: 1em;
 }
+
+#searchForm > div {
+  margin-right: 0.5em
+}
+
+#newIngredientForm > div {
+  margin-right: 1em;
+  margin-bottom: 0.5em;
+}
+
 
 /* Recipe Detail Styling */
 
