@@ -82,7 +82,12 @@ const RecipeForm = (props) => {
       <h2 id="recipeFormHeading">{props.heading}</h2>
       <form id="recipeForm" onSubmit={handleSubmit}>
         <label htmlFor="name">Recipe Name:</label>
-        <input id="name" onChange={handleChange} value={formState.name} />
+        <input
+          id="name"
+          onChange={handleChange}
+          value={formState.name}
+          placeholder="required"
+        />
         <label htmlFor="description">Description: </label>
         <textarea
           id="description"
@@ -102,12 +107,14 @@ const RecipeForm = (props) => {
           id="ingredients"
           onChange={handleChange}
           value={formState.ingredients}
+          placeholder="required"
         />
         <label htmlFor="instructions">Instructions:</label>
         <textarea
           id="instructions"
           onChange={handleChange}
           value={formState.instructions}
+          placeholder="required"
         />
         <label htmlFor="image">Image:</label>
         <input id="image" onChange={handleChange} value={formState.image} />

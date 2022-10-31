@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom'
 import RecipeSearch from '../components/RecipeSearch'
 import RecipeCard from '../components/RecipeCard'
 
-const RecipeList = (props) => {
+const RecipeList = () => {
   let navigate = useNavigate()
 
   const [recipes, setRecipes] = useState([])
@@ -67,13 +67,35 @@ const RecipeList = (props) => {
     navigate('/recipes/form')
   }
 
+  let resultList
+  if (recipes.length > 0) {
+    resultList = (
+      <section className="recipe-grid">
+        {recipes.map((recipe) => (
+          <div key={recipe._id}>
+            <RecipeCard
+              id={recipe._id}
+              name={recipe.name}
+              yield={recipe.yield}
+              totalTime={recipe.totalTime}
+              image={recipe.image}
+              onClick={showRecipeDetails}
+            />
+          </div>
+        ))}
+      </section>
+    )
+  } else {
+    resultList = <h3>No Results!</h3>
+  }
+
   useEffect(() => {
     getRecipes()
   }, [])
 
   return (
     <div>
-      <button className="recipe-details-button" onClick={showCreateForm}>
+      <button className="button" onClick={showCreateForm}>
         Create New Recipe
       </button>
       <div className="search">
@@ -83,23 +105,7 @@ const RecipeList = (props) => {
           handleSubmit={handleSubmit}
         />
       </div>
-      <div className="results">
-        <h2>Recipe List</h2>
-        <section className="recipe-grid">
-          {recipes.map((recipe) => (
-            <div key={recipe._id}>
-              <RecipeCard
-                id={recipe._id}
-                name={recipe.name}
-                yield={recipe.yield}
-                totalTime={recipe.totalTime}
-                image={recipe.image}
-                onClick={showRecipeDetails}
-              />
-            </div>
-          ))}
-        </section>
-      </div>
+      <div className="results">{resultList}</div>
     </div>
   )
 }

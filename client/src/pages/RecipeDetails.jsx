@@ -64,13 +64,10 @@ const RecipeDetails = (props) => {
 
   return (
     <div>
-      <button
-        className="recipe-details-button"
-        onClick={() => showUpdateForm(recipeId)}
-      >
+      <button className="button" onClick={() => showUpdateForm(recipeId)}>
         Edit Recipe
       </button>
-      <button className="recipe-details-button" onClick={() => deleteRecipe()}>
+      <button className="button" onClick={() => deleteRecipe()}>
         Delete Recipe
       </button>
       <h1>{recipeDetails.name}</h1>

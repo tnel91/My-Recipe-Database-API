@@ -76,43 +76,55 @@ const Pantry = () => {
       <PantrySearch />
       <h1>Pantry</h1>
       <form id="newIngredientForm" onSubmit={handleSubmit}>
-        <label htmlFor="newName">Name:</label>
-        <input
-          id="newName"
-          name="name"
-          onChange={handleChange}
-          value={formState.name}
-        />
-        <label htmlFor="newQuantity">Quantity:</label>
-        <input
-          id="newQuantity"
-          name="quantity"
-          onChange={handleChange}
-          value={formState.quantity}
-        />
-        <label htmlFor="newUnit">Unit:</label>
-        <input
-          id="newUnit"
-          name="unit"
-          onChange={handleChange}
-          value={formState.unit}
-        />
-        <label htmlFor="newPerishable">Perishable:</label>
-        <input
-          id="newPerishable"
-          name="perishable"
-          onChange={handleCheckbox}
-          checked={formState.perishable}
-          type="checkbox"
-        />
-        <label htmlFor="newImage">Image URL:</label>
-        <input
-          id="newImage"
-          name="image"
-          onChange={handleChange}
-          value={formState.image}
-          type="url"
-        />
+        <div>
+          <label htmlFor="newName">Name:</label>
+          <input
+            id="newName"
+            name="name"
+            onChange={handleChange}
+            value={formState.name}
+            placeholder="required"
+          />
+        </div>
+        <div>
+          <label htmlFor="newQuantity">Quantity:</label>
+          <input
+            id="newQuantity"
+            name="quantity"
+            onChange={handleChange}
+            value={formState.quantity}
+            placeholder="required"
+          />
+        </div>
+        <div>
+          <label htmlFor="newUnit">Unit:</label>
+          <input
+            id="newUnit"
+            name="unit"
+            onChange={handleChange}
+            value={formState.unit}
+          />
+        </div>
+        <div>
+          <label htmlFor="newPerishable">Perishable?</label>
+          <input
+            id="newPerishable"
+            name="perishable"
+            onChange={handleCheckbox}
+            checked={formState.perishable}
+            type="checkbox"
+          />
+        </div>
+        <div>
+          <label htmlFor="newImage">Image URL:</label>
+          <input
+            id="newImage"
+            name="image"
+            onChange={handleChange}
+            value={formState.image}
+            type="url"
+          />
+        </div>
         <button type="submit">Create New Ingredient</button>
       </form>
       <section className="ingredient-grid">
