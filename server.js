@@ -15,7 +15,7 @@ app.use('/api', routes)
 
 db.on('error', console.error.bind(console, 'MongoDB connection error:'))
 
-app.get('/*', (req, res) => {
+app.get('/api/*', (req, res) => {
   res.sendFile(`${__dirname}/client/build/index.html`)
 })
 
