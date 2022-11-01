@@ -1,8 +1,10 @@
 const mongoose = require('mongoose')
 require('dotenv').config()
 
+let url = process.env.MONGODB_URI
+
 mongoose
-  .connect(process.env.MONGODB_URI)
+  .connect(url)
   .then(() => {
     console.log(
       `Successfully connected to MongoDB via ${process.env.MONGODB_URI}.`
