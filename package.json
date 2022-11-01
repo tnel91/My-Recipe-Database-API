@@ -2,7 +2,7 @@
   "name": "travis_recipe_app",
   "version": "1.0.0",
   "description": "## Date: 10/19/2022",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
