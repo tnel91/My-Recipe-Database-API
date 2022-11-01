@@ -2,7 +2,9 @@ import { useParams, useNavigate } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 
-const RecipeDetails = (props) => {
+const Base_URL = 'http://localhost:3001/api'
+
+const RecipeDetails = () => {
   const [selectedRecipe, setSelectedRecipe] = useState(null)
   const [recipeDetails, setRecipeDetails] = useState({
     name: '',
@@ -20,7 +22,7 @@ const RecipeDetails = (props) => {
 
   const setRecipe = async () => {
     const response = await axios
-      .get(`http://localhost:3001/api/recipes/${recipeId}`)
+      .get(`${Base_URL}/recipes/${recipeId}`)
       .then((res) => {
         return res.data
       })
@@ -44,7 +46,7 @@ const RecipeDetails = (props) => {
     let confirm = window.confirm('Delete recipe forever?')
     if (confirm === true) {
       await axios
-        .delete(`http://localhost:3001/api/recipes/${recipeId}`)
+        .delete(`${Base_URL}/recipes/${recipeId}`)
         .then(() => {
           navigate(`/recipes`)
         })

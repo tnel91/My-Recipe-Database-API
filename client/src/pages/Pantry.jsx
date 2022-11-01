@@ -2,14 +2,16 @@ import axios from 'axios'
 import { useState, useEffect } from 'react'
 
 import IngredientCard from '../components/IngredientCard'
-import PantrySearch from '../components/PantrySearch'
+// import PantrySearch from '../components/PantrySearch'
+
+const Base_URL = 'http://localhost:3001/api'
 
 const Pantry = () => {
   const [ingredients, setIngredients] = useState([])
 
   const getIngredients = async () => {
     await axios
-      .get('http://localhost:3001/api/pantry')
+      .get(`${Base_URL}/pantry`)
       .then((response) => {
         setIngredients(response.data)
       })
@@ -43,7 +45,7 @@ const Pantry = () => {
   const handleSubmit = async (event) => {
     event.preventDefault()
     await axios
-      .post(`http://localhost:3001/api/ingredient`, formState)
+      .post(`${Base_URL}/ingredient`, formState)
       .then((response) => {
         setIngredients([response.data, ...ingredients])
         setFormState(initialState)

@@ -5,6 +5,8 @@ import { useNavigate } from 'react-router-dom'
 import RecipeSearch from '../components/RecipeSearch'
 import RecipeCard from '../components/RecipeCard'
 
+const Base_URL = 'http://localhost:3001/api'
+
 const RecipeList = () => {
   let navigate = useNavigate()
 
@@ -16,7 +18,7 @@ const RecipeList = () => {
 
   const getRecipes = async () => {
     await axios
-      .get('http://localhost:3001/api/recipes')
+      .get(`${Base_URL}/recipes`)
       .then((response) => {
         setRecipes(response.data)
       })
@@ -33,9 +35,7 @@ const RecipeList = () => {
     event.preventDefault()
     if (searchQuery.searchType === 'Name') {
       await axios
-        .get(
-          `http://localhost:3001/api/recipe_search_by_name/${searchQuery.query}`
-        )
+        .get(`${Base_URL}/recipe_search_by_name/${searchQuery.query}`)
         .then((response) => {
           setRecipes(response.data)
           setSearchQuery({ ...searchQuery, query: '' })
@@ -46,9 +46,7 @@ const RecipeList = () => {
     }
     if (searchQuery.searchType === 'Ingredients') {
       await axios
-        .get(
-          `http://localhost:3001/api/recipe_search_by_ingr/${searchQuery.query}`
-        )
+        .get(`${Base_URL}/recipe_search_by_ingr/${searchQuery.query}`)
         .then((response) => {
           setRecipes(response.data)
           setSearchQuery({ ...searchQuery, query: '' })

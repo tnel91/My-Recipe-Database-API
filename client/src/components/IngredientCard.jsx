@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import axios from 'axios'
 
+const Base_URL = 'http://localhost:3001/api'
+
 const IngredientCard = (props) => {
   const [ingredient, setIngredient] = useState(props.ingredient)
 
@@ -45,7 +47,7 @@ const IngredientCard = (props) => {
   const handleSubmit = async (event) => {
     event.preventDefault()
     const response = await axios
-      .put(`http://localhost:3001/api/ingredient/${ingredient._id}`, formState)
+      .put(`${Base_URL}/ingredient/${ingredient._id}`, formState)
       .then((response) => {
         return response.data
       })
@@ -60,7 +62,7 @@ const IngredientCard = (props) => {
     let confirm = window.confirm('Delete ingredient forever?')
     if (confirm === true) {
       await axios
-        .delete(`http://localhost:3001/api/ingredient/${ingredient._id}`)
+        .delete(`${Base_URL}/ingredient/${ingredient._id}`)
         .then(() => {
           props.removeFromList(ingredient._id)
         })

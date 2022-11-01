@@ -3,6 +3,8 @@ import { useState, useEffect } from 'react'
 
 import axios from 'axios'
 
+const Base_URL = 'http://localhost:3001/api'
+
 const RecipeForm = (props) => {
   let { recipeId } = useParams()
   let navigate = useNavigate()
@@ -29,7 +31,7 @@ const RecipeForm = (props) => {
     event.preventDefault()
     if (props.updateForm) {
       await axios
-        .put(`http://localhost:3001/api/recipes/${recipeId}`, formState)
+        .put(`${Base_URL}/recipes/${recipeId}`, formState)
         .then(() => {
           navigate(`/recipes/${recipeId}`)
         })
@@ -38,7 +40,7 @@ const RecipeForm = (props) => {
         })
     } else {
       await axios
-        .post(`http://localhost:3001/api/recipes`, formState)
+        .post(`${Base_URL}/recipes`, formState)
         .then((response) => {
           navigate(`/recipes/${response.data._id}`)
         })
@@ -50,7 +52,7 @@ const RecipeForm = (props) => {
 
   const updateTemplate = async () => {
     const recipe = await axios
-      .get(`http://localhost:3001/api/recipes/${recipeId}`)
+      .get(`${Base_URL}/recipes/${recipeId}`)
       .then((response) => {
         return response.data
       })
