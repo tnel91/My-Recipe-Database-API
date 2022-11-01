@@ -9,15 +9,24 @@ const Base_URL = 'http://localhost:3001/api'
 const Pantry = () => {
   const [ingredients, setIngredients] = useState([])
 
+  // const getIngredients = async () => {
+  //   await axios
+  //     .get(`${Base_URL}/pantry`)
+  //     .then((response) => {
+  //       setIngredients(response.data)
+  //     })
+  //     .catch((error) => {
+  //       console.log(error)
+  //     })
+  // }
+
   const getIngredients = async () => {
-    await axios
-      .get(`${Base_URL}/pantry`)
-      .then((response) => {
-        setIngredients(response.data)
-      })
-      .catch((error) => {
-        console.log(error)
-      })
+    try {
+      const response = await axios.get(`${Base_URL}/pantry`)
+      setIngredients(response.data)
+    } catch (error) {
+      console.log(error)
+    }
   }
 
   const initialState = {
