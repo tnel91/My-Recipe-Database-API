@@ -2,7 +2,8 @@ const About = () => {
   return (
     <div>
       <h1>About</h1>
-      <p>This is the about page.</p>
+      <p>This app is a work in progress.</p>
+      <p></p>
     </div>
   )
 }
