@@ -21,15 +21,6 @@ const Pantry = () => {
       })
   }
 
-  // const getIngredients = async () => {
-  //   try {
-  //     const response = await axios.get(`${Base_URL}/pantry`)
-  //     setIngredients(response.data)
-  //   } catch (error) {
-  //     console.log(error)
-  //   }
-  // }
-
   const initialState = {
     name: '',
     quantity: '',

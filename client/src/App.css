@@ -115,6 +115,11 @@ label {
   grid-gap: 1em
 }
 
+.recipe-card-info {
+  display: flex;
+  justify-content: space-evenly;
+}
+
 .card {
   border: 2px solid black;
   background-color: rgb(200, 200, 200);
@@ -125,8 +130,16 @@ label {
   height: 275px
 }
 
+.card.recipe > h3 {
+  margin: 1em 0 0.5em 0;
+}
+
 .card.ingredient {
   height: 275px;
+}
+
+.card.ingredient.perishable {
+  background-color: rgb(255, 254, 172);
 }
 
 .card:hover {

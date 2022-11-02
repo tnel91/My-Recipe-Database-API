@@ -5,8 +5,10 @@ const RecipeCard = (props) => {
         <img src={props.image} alt="Recipe Image" />
       </div>
       <h3>{props.name.toUpperCase()}</h3>
-      <p>{props.totalTime}</p>
-      <p>{props.yield}</p>
+      <div className="recipe-card-info">
+        <p>{props.totalTime}</p>
+        <p>{props.yield}</p>
+      </div>
     </div>
   )
 }

@@ -74,11 +74,14 @@ const IngredientCard = (props) => {
   }
 
   let perishable
+  let classList
 
   if (ingredient.perishable === true) {
     perishable = 'perishable'
+    classList = 'ingredient card perishable'
   } else {
     perishable = 'non-perishable'
+    classList = 'ingredient card'
   }
 
   return (
@@ -86,7 +89,7 @@ const IngredientCard = (props) => {
       <div
         id={cardId}
         style={{ display: '' }}
-        className="ingredient card"
+        className={classList}
         onClick={() => editCard()}
       >
         <div className="img-wrapper">

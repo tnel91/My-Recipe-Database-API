@@ -1,4 +1,4 @@
-import { useParams, useNavigate } from 'react-router-dom'
+import { useParams, useNavigate, Link } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 
@@ -72,6 +72,9 @@ const RecipeDetails = () => {
       </button>
       <button className="button" onClick={() => deleteRecipe()}>
         Delete Recipe
+      </button>
+      <button className="button" onClick={() => window.open(recipeDetails.url)}>
+        Source
       </button>
       <h1>{recipeDetails.name}</h1>
       <div className="recipe-details">
