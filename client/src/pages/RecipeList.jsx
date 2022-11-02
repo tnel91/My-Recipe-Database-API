@@ -93,7 +93,7 @@ const RecipeList = () => {
   }, [])
 
   return (
-    <div>
+    <div className="recipe-list">
       <button className="button" onClick={showCreateForm}>
         Create New Recipe
       </button>

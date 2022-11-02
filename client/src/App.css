@@ -5,11 +5,16 @@ body {
   background-color: rgb(177, 242, 249);
 }
 
-main {
-  margin: 2em;
+h1, h2 {
+  margin: 0;
 }
 
 /* Header Styling */
+
+header {
+  position: sticky;
+  top: 0px
+}
 
 nav {
   background-color: rgb(200, 200, 200);
@@ -26,8 +31,6 @@ nav a {
   width: 90px;
   text-decoration: none;
 }
-
-
 
 nav a:hover {
   box-shadow: 0 0 3px 1px black ;
@@ -49,6 +52,17 @@ nav a:visited {
   text-align: center;
 }
 
+.home,.pantry,.recipe-list,.recipe-details,.recipe-form,.about {
+  padding: 2em 2em;
+}
+
+.home {
+  background-image: url("https://www.european-food.com/wp-content/uploads/2019/06/well-stocked-pantry-fridge.jpg");
+
+}
+
+/* Button Styling */
+
 .button {
   margin: 5px;
   height: 3em;
@@ -66,18 +80,19 @@ nav a:visited {
 
 /* Recipe Form Styling */
 
-#recipeFormDiv {
+#recipe-form {
   align-content: center;
-  margin: 0em 8em 0em 0em
+  margin: 0 8em 0 0;
 }
 
-#recipeFormHeading {
+#recipe-form-heading {
   text-align: center;
+  margin: 0 0 1em 0;
 }
 
-#recipeForm {
+#recipe-form-grid {
   display: grid;
-  grid-template: 2em 10em 2em 2em 15em 20em 2em 2em 10em 3em / 30% 70%;
+  grid-template: 2em 5em 2em 2em 10em 10em 2em 2em 5em 3em / 30% 70%;
   text-align: right;
   grid-gap: 2px
 }
@@ -178,6 +193,13 @@ label {
   display: flex;
   flex-wrap: wrap;
   margin: 1em;
+}
+
+#searchForm {
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+  margin: 0 0 1em 0;
+  padding: 1em;
 }
 
 #searchForm > div {

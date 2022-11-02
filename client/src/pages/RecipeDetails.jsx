@@ -66,7 +66,7 @@ const RecipeDetails = () => {
   }, [recipeId])
 
   return (
-    <div>
+    <div className="recipe-details">
       <button className="button" onClick={() => showUpdateForm(recipeId)}>
         Edit Recipe
       </button>

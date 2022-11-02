@@ -81,9 +81,9 @@ const RecipeForm = (props) => {
   }, [recipeId])
 
   return (
-    <div id="recipeFormDiv">
-      <h2 id="recipeFormHeading">{props.heading}</h2>
-      <form id="recipeForm" onSubmit={handleSubmit}>
+    <div className="recipe-form">
+      <h2 id="recipe-form-heading">{props.heading}</h2>
+      <form id="recipe-form-grid" onSubmit={handleSubmit}>
         <label htmlFor="name">Recipe Name:</label>
         <input
           id="name"
