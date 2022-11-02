@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react'
 
 import axios from 'axios'
 
-const Base_URL = 'http://localhost:3001/api'
+const Base_URL = '/api'
 
 const RecipeForm = (props) => {
   let { recipeId } = useParams()
