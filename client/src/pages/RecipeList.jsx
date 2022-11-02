@@ -5,7 +5,8 @@ import { useNavigate } from 'react-router-dom'
 import RecipeSearch from '../components/RecipeSearch'
 import RecipeCard from '../components/RecipeCard'
 
-const Base_URL = '/api'
+let Base_URL =
+  process.env.NODE_ENV === 'production' ? '/api' : 'http://localhost:3001/api'
 
 const RecipeList = () => {
   let navigate = useNavigate()

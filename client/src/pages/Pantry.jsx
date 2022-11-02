@@ -4,7 +4,8 @@ import { useState, useEffect } from 'react'
 import IngredientCard from '../components/IngredientCard'
 // import PantrySearch from '../components/PantrySearch'
 
-const Base_URL = '/api'
+const Base_URL =
+  process.env.NODE_ENV === 'production' ? '/api' : 'http://localhost:3001/api'
 
 const Pantry = () => {
   const [ingredients, setIngredients] = useState([])

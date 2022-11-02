@@ -2,7 +2,8 @@ import { useParams, useNavigate } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 
-const Base_URL = '/api'
+const Base_URL =
+  process.env.NODE_ENV === 'production' ? '/api' : 'http://localhost:3001/api'
 
 const RecipeDetails = () => {
   const [selectedRecipe, setSelectedRecipe] = useState(null)
