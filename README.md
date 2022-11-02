@@ -4,7 +4,7 @@
 
 ### By: Travis Nelson
 
-#### [GitHub](https://github.com/tnel91/Travis_Recipe_App) | [LinkedIn](https://www.linkedin.com/in/travis-nelson91/) | [Trello](https://trello.com/b/m0n2neWP/travis-recipe-app) | [Heroku Deployment](https://recipedb-app.herokuapp.com/)
+#### [GitHub](https://github.com/tnel91/Travis_Recipe_App) | [LinkedIn](https://www.linkedin.com/in/travis-nelson91/) | [Trello](https://trello.com/b/m0n2neWP/travis-recipe-app) | [Heroku Deployment](https://recipe-db-app.herokuapp.com)
 
 ---
 
@@ -30,8 +30,7 @@ The plan is to create an app that allows a user to create recipes and upload the
 
 #### _Production_
 
-- Navigate to the [Heroku Deployment](https://recipedb-app.herokuapp.com/) page.
-- Note: The Heroku deployment currently only comunicates with the server if it is runing in the local environment.
+- Navigate to the [Heroku Deployment](https://recipe-db-app.herokuapp.com/) page.
 
 #### _Development_
 
