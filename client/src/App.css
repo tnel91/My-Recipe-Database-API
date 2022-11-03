@@ -9,6 +9,10 @@ h1, h2 {
   margin: 0;
 }
 
+textarea {
+  resize: none;
+}
+
 /* Header Styling */
 
 header {
@@ -92,7 +96,7 @@ nav a:visited {
 
 #recipe-form-grid {
   display: grid;
-  grid-template: 2em 5em 2em 2em 10em 10em 2em 2em 5em 3em / 7em 80%;
+  grid-template: 2em 5em 2em 2em 10em 10em 2em 2em 5em 3em / 6.5em 80%;
   text-align: right;
   grid-gap: 2px
 }
@@ -100,6 +104,10 @@ nav a:visited {
 label {
   padding-right: 0.5em;
   padding-top: 0.5em;
+}
+
+#recipe-form-grid > label {
+  padding-right: 0.2em;
 }
 
 #recipeSubmit {
@@ -259,6 +267,21 @@ label {
   margin: 1em 0;
   text-indent: 1em;
   line-height: 1.5em;
+}
+
+.recipe-notes {
+  border-top: 2px solid black;
+  padding: 1em 2em;
+  white-space: pre-wrap
+}
+
+.recipe-notes > h3 {
+  text-decoration: underline;
+}
+
+.recipe-notes > p {
+  line-height: 1.5em;
+  text-indent: 1.5em;
 }
 
 ::marker {

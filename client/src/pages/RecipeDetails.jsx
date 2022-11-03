@@ -15,7 +15,8 @@ const RecipeDetails = () => {
     ingredients: [],
     instructions: [],
     image: '',
-    url: ''
+    url: '',
+    notes: ''
   })
 
   let { recipeId } = useParams()
@@ -39,7 +40,8 @@ const RecipeDetails = () => {
       ingredients: response.ingredients.split('\n'),
       instructions: response.instructions.split('\n'),
       image: response.image,
-      url: response.url
+      url: response.url,
+      notes: response.notes
     })
   }
 
@@ -59,6 +61,18 @@ const RecipeDetails = () => {
 
   const showUpdateForm = (id) => {
     navigate(`/recipes/form/${id}`)
+  }
+
+  let notes
+  if (recipeDetails.notes != '') {
+    notes = (
+      <div className="recipe-notes">
+        <h3>Notes</h3>
+        <p>{recipeDetails.notes}</p>
+      </div>
+    )
+  } else {
+    notes = undefined
   }
 
   useEffect(() => {
@@ -102,6 +116,7 @@ const RecipeDetails = () => {
             <li key={index}>{step}</li>
           ))}
         </ol>
+        {notes}
       </div>
     </div>
   )
