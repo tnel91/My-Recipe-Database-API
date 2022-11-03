@@ -76,7 +76,7 @@ const Pantry = () => {
 
   return (
     <div className="pantry">
-      <h1>Pantry</h1>
+      <h2>Pantry</h2>
       <form onSubmit={handleSubmit}>
         <fieldset id="newIngredientForm">
           <legend>Create New Ingredient</legend>

@@ -52,13 +52,13 @@ nav a:visited {
   text-align: center;
 }
 
-.home,.pantry,.recipe-list,.recipe-details,.recipe-form,.about {
-  padding: 2em 2em;
+.pantry,.recipe-list,.recipe-details,.recipe-form,.about {
+  padding: 1em 2em;
 }
 
 .home {
   background-image: url("https://www.european-food.com/wp-content/uploads/2019/06/well-stocked-pantry-fridge.jpg");
-
+  padding: 2em;
 }
 
 /* Button Styling */
@@ -92,7 +92,7 @@ nav a:visited {
 
 #recipe-form-grid {
   display: grid;
-  grid-template: 2em 5em 2em 2em 10em 10em 2em 2em 5em 3em / 30% 70%;
+  grid-template: 2em 5em 2em 2em 10em 10em 2em 2em 5em 3em / 7em 80%;
   text-align: right;
   grid-gap: 2px
 }
@@ -195,11 +195,14 @@ label {
   margin: 1em;
 }
 
-#searchForm {
+.recipe-nav {
   border-top: 2px solid black;
   border-bottom: 2px solid black;
-  margin: 0 0 1em 0;
-  padding: 1em;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 1em 0;
+  padding: 0.5em;
 }
 
 #searchForm > div {
@@ -214,22 +217,48 @@ label {
 
 /* Recipe Detail Styling */
 
-.recipe-details {
+.details {
   display: flex;
   flex-wrap: wrap;
 }
 
 .recipe-image {
   max-height: 300px;
-  border: 1px solid black;
+  margin: 0 1em 0 0;
+  box-shadow: 0 0 3px 1px white;
 }
 
 .recipe-ingredients {
   white-space: pre-line;
+  list-style:circle;
+  padding: 1em 2em;
+}
+
+.recipe-ingredients > h3 {
+  margin: 0 0 1em 0;
+  text-decoration: underline;
+}
+
+.recipe-ingredients > li {
+  margin: 0.2em 0;
+  line-height: 1.5em;
 }
 
 .recipe-instructions {
+  border-top: 2px solid black;
   white-space: pre-line;
+  padding: 1em 2em;
+}
+
+.recipe-instructions > h3 {
+  margin: 0 0 1em 0;
+  text-decoration: underline;
+}
+
+.recipe-instructions > li {
+  margin: 1em 0;
+  text-indent: 1em;
+  line-height: 1.5em;
 }
 
 ::marker {

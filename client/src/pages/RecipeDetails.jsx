@@ -67,28 +67,37 @@ const RecipeDetails = () => {
 
   return (
     <div className="recipe-details">
-      <button className="button" onClick={() => showUpdateForm(recipeId)}>
-        Edit Recipe
-      </button>
-      <button className="button" onClick={() => deleteRecipe()}>
-        Delete Recipe
-      </button>
-      <button className="button" onClick={() => window.open(recipeDetails.url)}>
-        Source
-      </button>
-      <h1>{recipeDetails.name}</h1>
-      <div className="recipe-details">
+      <div>
+        <h2>{recipeDetails.name}</h2>
+        <div className="recipe-nav">
+          <button className="button" onClick={() => showUpdateForm(recipeId)}>
+            Edit Recipe
+          </button>
+          <button className="button" onClick={() => deleteRecipe()}>
+            Delete Recipe
+          </button>
+          <button
+            className="button"
+            onClick={() => window.open(recipeDetails.url)}
+          >
+            Source
+          </button>
+        </div>
+      </div>
+      <div className="details">
         <img
           className="recipe-image"
           src={recipeDetails.image}
           alt="Recipe Image"
         />
         <ul className="recipe-ingredients">
+          <h3>Ingredients</h3>
           {recipeDetails.ingredients.map((ingredient, index) => (
             <li key={index}>{ingredient}</li>
           ))}
         </ul>
         <ol className="recipe-instructions">
+          <h3>Instructions</h3>
           {recipeDetails.instructions.map((step, index) => (
             <li key={index}>{step}</li>
           ))}
