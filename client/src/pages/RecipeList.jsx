@@ -78,6 +78,7 @@ const RecipeList = () => {
               yield={recipe.yield}
               totalTime={recipe.totalTime}
               image={recipe.image}
+              description={recipe.description}
               onClick={showRecipeDetails}
             />
           </div>
