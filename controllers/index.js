@@ -2,7 +2,7 @@ const { Recipe, Ingredient } = require('../models')
 
 const getManyRecipes = async (req, res) => {
   try {
-    const recipes = await Recipe.find({}, {}, { limit: 20 })
+    const recipes = await Recipe.find({}, {}, { limit: 100 })
     res.status(200).json(recipes)
   } catch (error) {
     return res.status(500).send(error.message)
@@ -89,7 +89,7 @@ const getManyIngredients = async (req, res) => {
     const ingredients = await Ingredient.find(
       {},
       {},
-      { limit: 40, sort: { _id: -1 } }
+      { limit: 100, sort: { _id: -1 } }
     )
     res.status(200).json(ingredients)
   } catch (error) {

@@ -5,29 +5,44 @@ body {
   background-color: rgb(177, 242, 249);
 }
 
-main {
-  margin: 2em;
+h1, h2 {
+  margin: 0;
 }
+
+textarea {
+  resize: none;
+}
+
+.bold {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
 
 /* Header Styling */
 
 nav {
+  position: sticky;
+  top: 0px;
   background-color: rgb(200, 200, 200);
   display: flex;
+  flex-direction: row;
   justify-content: flex-end;
   align-items: center;
   height: 60px;
 }
 
-nav a {
-  font-size: large;
-  text-align: center;
-  line-height: 60px;
-  width: 90px;
-  text-decoration: none;
+#push-left {
+  margin-right: auto;
 }
 
-
+nav a {
+  font-size: 1.2em;
+  text-align: center;
+  line-height: 60px;
+  width: 4.5em;
+  text-decoration: none;
+}
 
 nav a:hover {
   box-shadow: 0 0 3px 1px black ;
@@ -45,15 +60,48 @@ nav a:visited {
   color:black
 }
 
-.home {
-  text-align: center;
+.pantry,.recipe-list,.recipe-details,.recipe-form,.about {
+  padding: 1em 2em;
 }
+
+.home {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+  background-image: url("https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimg1.cookinglight.timeinc.net%2Fsites%2Fdefault%2Ffiles%2Fstyles%2F4_3_horizontal_-_1200x900%2Fpublic%2Fimage%2F2015%2F12%2Fmain%2F1601p129-anatomy-healthy-fridge_0.jpg%3Fitok%3D5GWLuWj2");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 4em;
+}
+
+.home-div {
+  background-color: rgba(128, 128, 128, 0.604);
+  position: relative;
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
+.home-div h1 {
+  padding: 1em 0 0.5em 0;
+}
+
+
+
+/* Button Styling */
 
 .button {
   margin: 5px;
   height: 3em;
   width: 10em;
   background-color:rgb(200, 200, 200)
+}
+
+.home-div .button {
+  margin: 2em;
 }
 
 .button:hover {
@@ -66,18 +114,23 @@ nav a:visited {
 
 /* Recipe Form Styling */
 
-#recipeFormDiv {
+#recipe-form {
   align-content: center;
-  margin: 0em 8em 0em 0em
+  margin: 0 8em 0 0;
 }
 
-#recipeFormHeading {
+#recipe-form-heading {
   text-align: center;
+  margin: 0 0 1em 0;
 }
 
-#recipeForm {
+#form-note {
+  line-height: 1.5em;
+}
+
+#recipe-form-grid {
   display: grid;
-  grid-template: 2em 10em 2em 2em 15em 20em 2em 2em 10em 3em / 30% 70%;
+  grid-template: 1.5em 5em 1.5em 1.5em 10em 12em 1.5em 1.5em 6em 3em / 8em 80%;
   text-align: right;
   grid-gap: 2px
 }
@@ -85,6 +138,12 @@ nav a:visited {
 label {
   padding-right: 0.5em;
   padding-top: 0.5em;
+}
+
+#recipe-form-grid > label {
+  padding-right: 0.2em;
+  padding-top: 0.2em;
+  font-weight: bold;
 }
 
 #recipeSubmit {
@@ -180,6 +239,16 @@ label {
   margin: 1em;
 }
 
+.recipe-nav {
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 1em 0;
+  padding: 0.5em;
+}
+
 #searchForm > div {
   margin-right: 0.5em
 }
@@ -192,22 +261,54 @@ label {
 
 /* Recipe Detail Styling */
 
-.recipe-details {
+.details {
   display: flex;
   flex-wrap: wrap;
 }
 
 .recipe-image {
   max-height: 300px;
-  border: 1px solid black;
+  margin: 0 1em 0 0;
+  box-shadow: 0 0 3px 1px white;
 }
 
 .recipe-ingredients {
   white-space: pre-line;
+  list-style:circle;
+  padding: 1em 2em;
+}
+
+.details h3 {
+  margin: 0 0 1em 0;
+  text-decoration: underline;
+}
+
+.recipe-ingredients > li {
+  margin: 0.2em 0;
+  line-height: 1.5em;
 }
 
 .recipe-instructions {
+  border-top: 2px solid black;
   white-space: pre-line;
+  padding: 1em 2em;
+}
+
+.recipe-instructions > li {
+  margin: 1em 0;
+  text-indent: 1em;
+  line-height: 1.5em;
+}
+
+.recipe-notes {
+  border-top: 2px solid black;
+  padding: 1em 2em;
+  white-space: pre-wrap
+}
+
+.recipe-notes > p {
+  line-height: 1.5em;
+  text-indent: 1.5em;
 }
 
 ::marker {

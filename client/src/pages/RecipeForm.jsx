@@ -81,9 +81,14 @@ const RecipeForm = (props) => {
   }, [recipeId])
 
   return (
-    <div id="recipeFormDiv">
-      <h2 id="recipeFormHeading">{props.heading}</h2>
-      <form id="recipeForm" onSubmit={handleSubmit}>
+    <div className="recipe-form">
+      <h2 id="recipe-form-heading">{props.heading}</h2>
+      <p id="form-note">
+        <span className="bold">Note:</span> When filling out Ingredients and
+        Instructions in this form, please ensure each ingredient/step is
+        separated by a line break to ensure proper formatting.
+      </p>
+      <form id="recipe-form-grid" onSubmit={handleSubmit}>
         <label htmlFor="name">Recipe Name:</label>
         <input
           id="name"

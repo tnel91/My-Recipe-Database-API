@@ -93,18 +93,19 @@ const RecipeList = () => {
   }, [])
 
   return (
-    <div>
-      <button className="button" onClick={showCreateForm}>
-        Create New Recipe
-      </button>
-      <div className="search">
+    <div className="recipe-list">
+      <h2>Recipe Search</h2>
+      <div className="recipe-nav">
+        <button className="button" onClick={showCreateForm}>
+          Create New Recipe
+        </button>
         <RecipeSearch
           handleChange={handleChange}
           query={searchQuery.query}
           handleSubmit={handleSubmit}
         />
       </div>
-      <div className="results">{resultList}</div>
+      {resultList}
     </div>
   )
 }
