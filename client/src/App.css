@@ -13,26 +13,34 @@ textarea {
   resize: none;
 }
 
-/* Header Styling */
-
-header {
-  position: sticky;
-  top: 0px
+.bold {
+  font-weight: bold;
+  text-decoration: underline;
 }
 
+
+/* Header Styling */
+
 nav {
+  position: sticky;
+  top: 0px;
   background-color: rgb(200, 200, 200);
   display: flex;
+  flex-direction: row;
   justify-content: flex-end;
   align-items: center;
   height: 60px;
 }
 
+#push-left {
+  margin-right: auto;
+}
+
 nav a {
-  font-size: large;
+  font-size: 1.2em;
   text-align: center;
   line-height: 60px;
-  width: 90px;
+  width: 4.5em;
   text-decoration: none;
 }
 
@@ -52,18 +60,36 @@ nav a:visited {
   color:black
 }
 
-.home {
-  text-align: center;
-}
-
 .pantry,.recipe-list,.recipe-details,.recipe-form,.about {
   padding: 1em 2em;
 }
 
 .home {
-  background-image: url("https://www.european-food.com/wp-content/uploads/2019/06/well-stocked-pantry-fridge.jpg");
-  padding: 2em;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+  background-image: url("https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimg1.cookinglight.timeinc.net%2Fsites%2Fdefault%2Ffiles%2Fstyles%2F4_3_horizontal_-_1200x900%2Fpublic%2Fimage%2F2015%2F12%2Fmain%2F1601p129-anatomy-healthy-fridge_0.jpg%3Fitok%3D5GWLuWj2");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 4em;
 }
+
+.home-div {
+  background-color: rgba(128, 128, 128, 0.604);
+  position: relative;
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
+.home-div h1 {
+  padding: 1em 0 0.5em 0;
+}
+
+
 
 /* Button Styling */
 
@@ -72,6 +98,10 @@ nav a:visited {
   height: 3em;
   width: 10em;
   background-color:rgb(200, 200, 200)
+}
+
+.home-div .button {
+  margin: 2em;
 }
 
 .button:hover {
@@ -94,9 +124,13 @@ nav a:visited {
   margin: 0 0 1em 0;
 }
 
+#form-note {
+  line-height: 1.5em;
+}
+
 #recipe-form-grid {
   display: grid;
-  grid-template: 2em 5em 2em 2em 10em 10em 2em 2em 5em 3em / 6.5em 80%;
+  grid-template: 1.5em 5em 1.5em 1.5em 10em 12em 1.5em 1.5em 6em 3em / 8em 80%;
   text-align: right;
   grid-gap: 2px
 }
@@ -108,6 +142,8 @@ label {
 
 #recipe-form-grid > label {
   padding-right: 0.2em;
+  padding-top: 0.2em;
+  font-weight: bold;
 }
 
 #recipeSubmit {
@@ -242,7 +278,7 @@ label {
   padding: 1em 2em;
 }
 
-.recipe-ingredients > h3 {
+.details h3 {
   margin: 0 0 1em 0;
   text-decoration: underline;
 }
@@ -258,11 +294,6 @@ label {
   padding: 1em 2em;
 }
 
-.recipe-instructions > h3 {
-  margin: 0 0 1em 0;
-  text-decoration: underline;
-}
-
 .recipe-instructions > li {
   margin: 1em 0;
   text-indent: 1em;
@@ -273,10 +304,6 @@ label {
   border-top: 2px solid black;
   padding: 1em 2em;
   white-space: pre-wrap
-}
-
-.recipe-notes > h3 {
-  text-decoration: underline;
 }
 
 .recipe-notes > p {
