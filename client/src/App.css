@@ -2,10 +2,10 @@ body {
   margin: 0;
   padding: 0;
   font-family: Georgia, 'Times New Roman', Times, serif;
-  background-color: rgb(177, 242, 249);
+  background-color: rgb(215, 242, 251);
   background-image: url("https://images.unsplash.com/photo-1528460033278-a6ba57020470?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1935&q=80");
   background-repeat: no-repeat;
-  background-size: 100vw 100%;
+  background-size: cover;
 }
 
 h1, h2 {
@@ -26,7 +26,7 @@ textarea {
 nav {
   position: sticky;
   top: 0px;
-  background-color: rgb(200, 200, 200);
+  background-image: linear-gradient(to bottom left, rgb(215, 242, 251), rgb(114, 167, 186));
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
@@ -102,24 +102,40 @@ button, .pointer {
   cursor: pointer
 }
 
-.button {
+.checkbox {
+  position: relative;
+  top: 3px
+}
+
+#new-ing-checkdiv {
+  position: relative;
+  bottom: 0.2em
+}
+
+#ing-checkdiv {
+  position: relative;
+  bottom: 0.2em
+}
+
+button {
   margin: 5px;
   height: 3em;
   width: 10em;
-  background-color:rgb(200, 200, 200);
+  background-color:rgb(215, 242, 251);
 }
 
 .home-div .button {
   margin: 2em;
 }
 
-.button:hover {
+button:hover {
   box-shadow: 0 0 3px 1px black ;
 }
 
-.button:active {
-  background-color: rgb(150, 150, 150);
+button:active {
+  background-color: rgb(114, 167, 186);
 }
+
 
 /* Recipe Form Styling */
 
@@ -134,12 +150,14 @@ button, .pointer {
 }
 
 #form-note {
+  padding: 1em 0;
   line-height: 1.5em;
+  border-top: 2px solid black;
 }
 
 #recipe-form-grid {
   display: grid;
-  grid-template: 1.5em 5em 1.5em 1.5em 10em 12em 1.5em 1.5em 6em 3em / 8em 80%;
+  grid-template: 1.5em 5em 1.5em 1.5em 10em 12em 1.5em 1.5em 6em / 8em 80%;
   text-align: right;
   grid-gap: 2px
 }
@@ -156,8 +174,9 @@ label {
 }
 
 #recipeSubmit {
-  background-color: rgb(200, 200, 200);
+  background-color: rgb(215, 242, 251);
   grid-column: 2 / 3;
+  width: 10em;
 }
 
 #recipeSubmit:hover {
@@ -165,7 +184,7 @@ label {
 }
 
 #recipeSubmit:active {
-  background-color: rgb(150, 150, 150);
+  background-color: rgb(114, 167, 186);
 }
 
 /* /////////////////// */
@@ -190,7 +209,7 @@ label {
 
 .card {
   border: 2px solid black;
-  background-color: rgb(200, 200, 200);
+  background-color: rgb(215, 242, 251);
   text-align: center;
 }
 
@@ -248,7 +267,18 @@ label {
   height: fill;
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: space-evenly;
+}
+
+.ingredient-form input {
+  line-height: 1.5em;
+}
+
+.ingredient-form > button {
+  margin: 0px;
+  height: 2em;
+  width: 14em;
 }
 
 .checkbox {
@@ -259,8 +289,10 @@ label {
 #newIngredientForm,#searchForm {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   margin: 1em;
 }
+
 
 .recipe-nav {
   border-top: 2px solid black;

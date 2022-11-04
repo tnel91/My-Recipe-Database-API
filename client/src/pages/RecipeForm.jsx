@@ -82,7 +82,10 @@ const RecipeForm = (props) => {
 
   return (
     <div className="recipe-form">
-      <h2 id="recipe-form-heading">{props.heading}</h2>
+      {/* <h2 id="recipe-form-heading">{props.heading}</h2> */}
+      <button form="recipe-form-grid" id="recipeSubmit" type="submit">
+        {props.submit}
+      </button>
       <p id="form-note">
         <span className="bold">Note:</span> When filling out Ingredients and
         Instructions in this form, please ensure each ingredient/step is
@@ -133,9 +136,6 @@ const RecipeForm = (props) => {
         <input id="url" onChange={handleChange} value={formState.url} />
         <label htmlFor="notes">Notes:</label>
         <textarea id="notes" onChange={handleChange} value={formState.notes} />
-        <button id="recipeSubmit" type="submit">
-          {props.submit}
-        </button>
       </form>
       <div className="Response"></div>
     </div>

@@ -111,7 +111,7 @@ const Pantry = () => {
               value={formState.unit}
             />
           </div>
-          <div>
+          <div id="new-ing-checkdiv">
             <label htmlFor="newPerishable">Perishable?</label>
             <input
               className="pointer checkbox"

@@ -132,18 +132,7 @@ const IngredientCard = (props) => {
               name="unit"
               onChange={handleChange}
               value={formState.unit}
-              size="18"
-            />
-          </div>
-          <div>
-            <label htmlFor={perishableId}>Perishable:</label>
-            <input
-              className="pointer checkbox"
-              id={perishableId}
-              name="perishable"
-              onChange={handleCheckbox}
-              checked={formState.perishable}
-              type="checkbox"
+              size="19"
             />
           </div>
           <div>
@@ -157,6 +146,18 @@ const IngredientCard = (props) => {
               size="17"
             />
           </div>
+          <div id="ing-checkdiv">
+            <label htmlFor={perishableId}>Perishable:</label>
+            <input
+              className="pointer checkbox"
+              id={perishableId}
+              name="perishable"
+              onChange={handleCheckbox}
+              checked={formState.perishable}
+              type="checkbox"
+            />
+          </div>
+
           <button type="submit">Edit Ingredient</button>
           <button type="button" onClick={revertCard}>
             Cancel Changes
