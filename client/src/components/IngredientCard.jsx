@@ -138,7 +138,7 @@ const IngredientCard = (props) => {
           <div>
             <label htmlFor={perishableId}>Perishable:</label>
             <input
-              className="checkbox"
+              className="pointer checkbox"
               id={perishableId}
               name="perishable"
               onChange={handleCheckbox}

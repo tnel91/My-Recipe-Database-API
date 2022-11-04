@@ -3,7 +3,11 @@ const RecipeSearch = (props) => {
     <form id="searchForm" onSubmit={props.handleSubmit}>
       <div>
         <label htmlFor="searchType">Search by:</label>
-        <select id="searchType" onChange={props.handleChange}>
+        <select
+          className="pointer"
+          id="searchType"
+          onChange={props.handleChange}
+        >
           <option value="Name">Name</option>
           <option value="Ingredients">Ingredients</option>
         </select>

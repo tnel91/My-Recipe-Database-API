@@ -114,6 +114,7 @@ const Pantry = () => {
           <div>
             <label htmlFor="newPerishable">Perishable?</label>
             <input
+              className="pointer checkbox"
               id="newPerishable"
               name="perishable"
               onChange={handleCheckbox}

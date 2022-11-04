@@ -3,7 +3,7 @@ body {
   padding: 0;
   font-family: Georgia, 'Times New Roman', Times, serif;
   background-color: rgb(177, 242, 249);
-  background-image: url("https://i.imgur.com/W7Xhgfb.jpg");
+  background-image: url("https://images.unsplash.com/photo-1528460033278-a6ba57020470?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1935&q=80");
   background-repeat: no-repeat;
   background-size: 100vw 100%;
 }
@@ -20,7 +20,6 @@ textarea {
   font-weight: bold;
   text-decoration: underline;
 }
-
 
 /* Header Styling */
 
@@ -83,7 +82,7 @@ nav a:visited {
 }
 
 .home-div {
-  background-color: rgba(128, 128, 128, 0.604);
+  background-color: rgba(50, 50, 50, 0.5);
   position: relative;
   margin-left: 20%;
   margin-right: 20%;
@@ -93,15 +92,21 @@ nav a:visited {
   padding: 1em 0 0.5em 0;
 }
 
-
+.about {
+  min-height: 100vh;
+}
 
 /* Button Styling */
+
+button, .pointer {
+  cursor: pointer
+}
 
 .button {
   margin: 5px;
   height: 3em;
   width: 10em;
-  background-color:rgb(200, 200, 200)
+  background-color:rgb(200, 200, 200);
 }
 
 .home-div .button {
@@ -198,7 +203,7 @@ label {
 }
 
 .description {
-  height: 275px;
+  height: 276px;
   padding: 0;
   margin: 0;
   background-color: rgba(0, 0, 0, 0.75);
@@ -220,7 +225,7 @@ label {
 }
 
 .card:hover {
-  box-shadow: 0px 0px 3px 1px black;
+  box-shadow: 0px 0px 4px 2px black;
 }
 
 .recipe .img-wrapper {
