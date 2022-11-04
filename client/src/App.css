@@ -70,6 +70,7 @@ nav a:visited {
 
 .home {
   position: absolute;
+  z-index: 2;
   top: 0;
   right: 0;
   bottom: 0;
@@ -85,6 +86,7 @@ nav a:visited {
 .home-div {
   background-color: rgba(50, 50, 50, 0.5);
   position: relative;
+  /* top: 4em; */
   margin-left: 20%;
   margin-right: 20%;
 }
@@ -284,33 +286,28 @@ input {
   width: 14em;
 }
 
-#newIngredientForm,#searchForm {
+#newIngredientForm, #searchForm {
   display: flex;
+  justify-content:space-between;
   flex-wrap: wrap;
   align-items: center;
   margin: 1em;
 }
 
-
-.recipe-nav {
+#newIngredientForm {
   border-top: 2px solid black;
   border-bottom: 2px solid black;
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  margin: 1em 0;
+}
+
+#searchForm {
   padding: 0.5em;
+  margin: 1em 0;
 }
 
-#searchForm > div {
-  margin-right: 0.5em
-}
-
-#newIngredientForm > div {
+#searchForm > div, #newIngredientForm > div {
   margin-right: 1em;
-  margin-bottom: 0.5em;
+  margin-bottom: 0.5em
 }
-
 
 /* Recipe Detail Styling */
 

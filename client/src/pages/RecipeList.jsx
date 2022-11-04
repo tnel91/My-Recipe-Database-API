@@ -95,17 +95,13 @@ const RecipeList = () => {
 
   return (
     <div className="recipe-list">
-      <h2>Recipe Search</h2>
-      <div className="recipe-nav">
-        <button className="button" onClick={showCreateForm}>
-          Create New Recipe
-        </button>
-        <RecipeSearch
-          handleChange={handleChange}
-          query={searchQuery.query}
-          handleSubmit={handleSubmit}
-        />
-      </div>
+      <h2>Recipe Database</h2>
+      <RecipeSearch
+        handleChange={handleChange}
+        query={searchQuery.query}
+        handleSubmit={handleSubmit}
+        showCreateForm={showCreateForm}
+      />
       {resultList}
     </div>
   )
