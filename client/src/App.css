@@ -25,6 +25,7 @@ textarea {
 
 nav {
   position: sticky;
+  z-index: 1;
   top: 0px;
   background-image: linear-gradient(to bottom left, rgb(215, 242, 251), rgb(114, 167, 186));
   display: flex;
@@ -52,7 +53,7 @@ nav a:hover {
 }
 
 nav a:active {
-  background-color: rgb(150, 150, 150);
+  background-color: rgb(114, 167, 186);
 }
 
 nav:link {
@@ -96,7 +97,7 @@ nav a:visited {
   min-height: 100vh;
 }
 
-/* Button Styling */
+/* Input Styling */
 
 button, .pointer {
   cursor: pointer
@@ -104,7 +105,9 @@ button, .pointer {
 
 .checkbox {
   position: relative;
-  top: 3px
+  top: 3px;
+  width: 17px;
+  height: 17px;
 }
 
 #new-ing-checkdiv {
@@ -114,7 +117,7 @@ button, .pointer {
 
 #ing-checkdiv {
   position: relative;
-  bottom: 0.2em
+  bottom: 0.2em;
 }
 
 button {
@@ -262,8 +265,8 @@ label {
 }
 
 .ingredient-form {
-  margin-left: .2em;
-  margin-right: .2em;
+  margin-left: 2px;
+  margin-right: 2px;
   height: fill;
   display: flex;
   flex-direction: column;
@@ -271,7 +274,7 @@ label {
   justify-content: space-evenly;
 }
 
-.ingredient-form input {
+input {
   line-height: 1.5em;
 }
 
@@ -279,11 +282,6 @@ label {
   margin: 0px;
   height: 2em;
   width: 14em;
-}
-
-.checkbox {
-  width: 17px;
-  height: 17px;
 }
 
 #newIngredientForm,#searchForm {

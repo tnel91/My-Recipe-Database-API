@@ -78,10 +78,10 @@ const IngredientCard = (props) => {
 
   if (ingredient.perishable === true) {
     perishable = 'perishable'
-    classList = 'ingredient card perishable'
+    classList = 'ingredient card perishable pointer'
   } else {
     perishable = 'non-perishable'
-    classList = 'ingredient card'
+    classList = 'ingredient card pointer'
   }
 
   return (
@@ -114,7 +114,7 @@ const IngredientCard = (props) => {
             />
           </div>
           <div>
-            <label htmlFor={quantityId}>Quantity:</label>
+            <label htmlFor={quantityId}>Quantity: </label>
             <input
               id={quantityId}
               name="quantity"

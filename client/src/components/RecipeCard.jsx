@@ -9,7 +9,7 @@ const RecipeCard = (props) => {
 
   return (
     <div
-      className="recipe card"
+      className="recipe card pointer"
       onClick={() => props.onClick(props.id)}
       onMouseEnter={showDescription}
       onMouseLeave={hideDescription}
