@@ -5,6 +5,7 @@ body {
   background-color: rgb(215, 242, 251);
   background-image: url("https://images.unsplash.com/photo-1528460033278-a6ba57020470?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1935&q=80");
   background-repeat: no-repeat;
+  background-position: center;
   background-size: cover;
 }
 
@@ -76,7 +77,7 @@ nav a:visited {
   bottom: 0;
   left: 0;
   text-align: center;
-  background-image: url("https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimg1.cookinglight.timeinc.net%2Fsites%2Fdefault%2Ffiles%2Fstyles%2F4_3_horizontal_-_1200x900%2Fpublic%2Fimage%2F2015%2F12%2Fmain%2F1601p129-anatomy-healthy-fridge_0.jpg%3Fitok%3D5GWLuWj2");
+  background-image: url("https://images.unsplash.com/photo-1556911220-bff31c812dba?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1568&q=80");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -84,11 +85,13 @@ nav a:visited {
 }
 
 .home-div {
-  background-color: rgba(50, 50, 50, 0.5);
-  position: relative;
-  /* top: 4em; */
-  margin-left: 20%;
-  margin-right: 20%;
+  background-color: rgba(160, 160, 160, 0.35);
+  position:relative;
+  top: 4em;
+  margin: auto;
+  min-width: 20em;
+  max-width: 33em;
+  border-radius: 10px;
 }
 
 .home-div h1 {
@@ -102,7 +105,8 @@ nav a:visited {
 /* Input Styling */
 
 button, .pointer {
-  cursor: pointer
+  cursor: pointer;
+font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 .checkbox {
@@ -130,8 +134,14 @@ button {
 }
 
 .home-div .button {
-  margin: 2em;
+  margin: 0.5em;
+  height: 2.5em;
+  width: 10em;
+  background-color: rgba(160, 160, 160, 0.5);
+  font-size: 16pt;
 }
+
+
 
 button:hover {
   box-shadow: 0 0 3px 1px black ;
@@ -141,6 +151,9 @@ button:active {
   background-color: rgb(114, 167, 186);
 }
 
+.home-div .button:active {
+  background-color: rgba(160, 160, 160, 0.85);
+}
 
 /* Recipe Form Styling */
 
@@ -288,20 +301,12 @@ input {
 
 #newIngredientForm, #searchForm {
   display: flex;
-  justify-content:space-between;
+  justify-content: flex-start;
   flex-wrap: wrap;
   align-items: center;
-  margin: 1em;
-}
-
-#newIngredientForm {
-  border-top: 2px solid black;
-  border-bottom: 2px solid black;
-}
-
-#searchForm {
-  padding: 0.5em;
   margin: 1em 0;
+  padding: 0.5em 0.5em 0.5em 1.2em;
+  border: 2px inset rgb(0, 115, 123);
 }
 
 #searchForm > div, #newIngredientForm > div {
