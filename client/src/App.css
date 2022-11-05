@@ -5,7 +5,6 @@ body {
   background-color: rgb(215, 242, 251);
   background-image: url("https://images.unsplash.com/photo-1528460033278-a6ba57020470?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1935&q=80");
   background-repeat: no-repeat;
-  background-position: center;
   background-size: cover;
 }
 
@@ -100,6 +99,11 @@ nav a:visited {
 
 .about {
   min-height: 100vh;
+}
+
+.about > p {
+  text-indent: 2em;
+  line-height: 1.5em;
 }
 
 /* Input Styling */
@@ -226,7 +230,7 @@ label {
 }
 
 .card {
-  border: 2px solid black;
+  border: 2px inset rgb(0, 115, 123);
   background-color: rgb(215, 242, 251);
   text-align: center;
 }
