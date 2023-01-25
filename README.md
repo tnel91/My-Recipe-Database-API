@@ -45,11 +45,11 @@ The plan is to create an app that allows a user to create recipes and upload the
 
 #### _Recipe List Page_
 
-![Recipe List Page](https://i.imgur.com/5i9cjCL.png)
+![Recipe List Page](https://i.imgur.com/yxcHVKb.png)
 
 #### _Pantry Page_
 
-![Pantry Page](https://i.imgur.com/VICWPak.png)
+![Pantry Page](https://i.imgur.com/DuayMYH.png)
 
 ---
 
