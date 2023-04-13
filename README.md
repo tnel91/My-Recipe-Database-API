@@ -16,13 +16,14 @@ The plan is to create an app that allows a user to create recipes and upload the
 
 ### **_Technologies Used_**
 
-- Visual Studio Code
-- Git/Github
+- React
+- Express
+- Node.js
 - MongoDB
 - Mongoose
-- Express
-- React
 - Heroku
+- Visual Studio Code
+- Git/Github
 
 ---
 
@@ -92,3 +93,5 @@ The plan is to create an app that allows a user to create recipes and upload the
 ##### Image Hosting [Imgur](https://imgur.com/)
 
 ##### Search Engine [Google](http://google.com)
+
+##### Stack Overflow [StackOverflow](https://stackoverflow.com/)
