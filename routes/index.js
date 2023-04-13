@@ -36,7 +36,7 @@ router.delete('/ingredient/:ingredientId', controllers.deleteIngredient)
 
 router.post('/register', authControllers.register)
 
-// router.get('/lol', authControllers.help)
+router.post('/login', authControllers.login)
 
 // router.post('/login', authController.Login)
 
