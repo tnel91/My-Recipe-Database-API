@@ -6,6 +6,8 @@ const MONGODB =
     ? process.env.MONGODB_URI
     : 'mongodb://localhost:27017'
 
+console.log(process.env.MONGODB_URI)
+
 mongoose
   .connect(MONGODB)
   .then(() => {

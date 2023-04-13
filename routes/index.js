@@ -1,5 +1,7 @@
 const { Router } = require('express')
-const controllers = require('../controllers')
+const controllers = require('../controllers/AppController')
+const authControllers = require('../controllers/AuthController')
+const middleware = require('../middleware')
 const router = Router()
 
 router.get('/recipes', controllers.getManyRecipes)
@@ -29,5 +31,20 @@ router.post('/ingredient', controllers.createNewIngredient)
 router.put('/ingredient/:ingredientId', controllers.updateIngredient)
 
 router.delete('/ingredient/:ingredientId', controllers.deleteIngredient)
+
+// Auth routes
+
+router.post('/register', authControllers.register)
+
+// router.get('/lol', authControllers.help)
+
+// router.post('/login', authController.Login)
+
+// router.get(
+//   '/session',
+//   middleware.stripToken,
+//   middleware.verifyToken,
+//   authController.CheckSession
+// )
 
 module.exports = router
