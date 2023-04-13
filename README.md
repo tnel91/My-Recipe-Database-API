@@ -1,4 +1,4 @@
-# Recipe Organizer App
+# My Recipe Database
 
 ## Date: 10/19/2022
 
@@ -10,7 +10,7 @@
 
 ### **_Description_**
 
-The plan is to create an app that allows a user to create recipes and upload them to a database. The user will be able to search for, view, update, and delete recipes from the database. There will also be a separate page for tracking the contents of the user's pantry. It will render cards for each ingredient, showing name and quantity. The user will be able filter ingredients by tag, in addition to CRUD operations.
+My Recipe Database a React.js app that allows a user to create recipes and upload them to a database. The user will be able to search for, view, update, and delete recipes from the database. There will also be a separate page for tracking the contents of the user's pantry. It will render cards for each ingredient, showing name and quantity. The user will be able filter ingredients by tag, in addition to CRUD operations.
 
 ---
 
@@ -46,11 +46,11 @@ The plan is to create an app that allows a user to create recipes and upload the
 
 #### _Recipe List Page_
 
-![Recipe List Page](https://i.imgur.com/5i9cjCL.png)
+![Recipe List Page](https://i.imgur.com/yxcHVKb.png)
 
 #### _Pantry Page_
 
-![Pantry Page](https://i.imgur.com/VICWPak.png)
+![Pantry Page](https://i.imgur.com/DuayMYH.png)
 
 ---
 
