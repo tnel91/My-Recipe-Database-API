@@ -10,7 +10,8 @@ const recipeSchema = new Schema(
     instructions: { type: String, required: true },
     image: { type: String, required: false },
     url: { type: String, required: false },
-    notes: { type: String, required: false }
+    notes: { type: String, required: false },
+    owner: { type: Schema.Types.ObjectId, ref: 'User' }
   },
   { timestamps: true }
 )

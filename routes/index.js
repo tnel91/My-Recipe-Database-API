@@ -18,19 +18,56 @@ router.get(
   controllers.searchRecipesByIngredient
 )
 
-router.post('/recipes', controllers.createNewRecipe)
+router.post(
+  '/recipes',
+  middleware.stripToken,
+  middleware.verifyToken,
+  controllers.createNewRecipe
+)
 
-router.put('/recipes/:recipeId', controllers.updateRecipe)
+router.get(
+  '/user',
+  middleware.stripToken,
+  middleware.verifyToken,
+  controllers.getUser
+)
 
-router.delete('/recipes/:recipeId', controllers.deleteRecipe)
+router.put(
+  '/recipes/:recipeId',
+  middleware.stripToken,
+  middleware.verifyToken,
+  controllers.updateRecipe
+)
+
+router.delete(
+  '/recipes/:recipeId',
+  middleware.stripToken,
+  middleware.verifyToken,
+  controllers.deleteRecipe
+)
 
 router.get('/pantry', controllers.getManyIngredients)
 
-router.post('/ingredient', controllers.createNewIngredient)
+router.post(
+  '/ingredient',
+  middleware.stripToken,
+  middleware.verifyToken,
+  controllers.createNewIngredient
+)
 
-router.put('/ingredient/:ingredientId', controllers.updateIngredient)
+router.put(
+  '/ingredient/:ingredientId',
+  middleware.stripToken,
+  middleware.verifyToken,
+  controllers.updateIngredient
+)
 
-router.delete('/ingredient/:ingredientId', controllers.deleteIngredient)
+router.delete(
+  '/ingredient/:ingredientId',
+  middleware.stripToken,
+  middleware.verifyToken,
+  controllers.deleteIngredient
+)
 
 // Auth routes
 
@@ -43,6 +80,14 @@ router.get(
   middleware.stripToken,
   middleware.verifyToken,
   authControllers.checkSession
+)
+// Admin routes
+
+router.delete(
+  '/admin/reset_recipes',
+  middleware.stripToken,
+  middleware.verifyToken,
+  controllers.deleteAllCreatedRecipes
 )
 
 module.exports = router
