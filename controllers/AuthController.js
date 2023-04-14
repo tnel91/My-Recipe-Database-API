@@ -39,8 +39,13 @@ const login = async (req, res) => {
   }
 }
 
+const checkSession = async (req, res) => {
+  const { payload } = res.locals
+  res.send(payload)
+}
+
 module.exports = {
   login,
-  register
-  // checkSession
+  register,
+  checkSession
 }

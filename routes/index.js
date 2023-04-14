@@ -38,13 +38,11 @@ router.post('/register', authControllers.register)
 
 router.post('/login', authControllers.login)
 
-// router.post('/login', authController.Login)
-
-// router.get(
-//   '/session',
-//   middleware.stripToken,
-//   middleware.verifyToken,
-//   authController.CheckSession
-// )
+router.get(
+  '/session',
+  middleware.stripToken,
+  middleware.verifyToken,
+  authControllers.checkSession
+)
 
 module.exports = router
