@@ -1,12 +1,17 @@
 const mongoose = require('mongoose')
 require('dotenv').config()
 
-let url = process.env.MONGODB_URI
+const MONGODB =
+  process.env.NODE_ENV === 'production'
+    ? process.env.MONGODB_URI
+    : 'mongodb://localhost:27017'
+
+console.log(process.env.MONGODB_URI)
 
 mongoose
-  .connect(url)
+  .connect(MONGODB)
   .then(() => {
-    console.log(`Successfully connected to MongoDB via ${url}.`)
+    console.log(`Successfully connected to MongoDB via ${MONGODB}.`)
   })
   .catch((e) => {
     console.error('Connection error', e.message)

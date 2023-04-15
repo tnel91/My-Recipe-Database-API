@@ -1,5 +1,8 @@
 const { Router } = require('express')
-const controllers = require('../controllers')
+const controllers = require('../controllers/AppController')
+const authControllers = require('../controllers/AuthController')
+const adminControllers = require('../controllers/AdminController')
+const middleware = require('../middleware')
 const router = Router()
 
 router.get('/recipes', controllers.getManyRecipes)
@@ -16,18 +19,94 @@ router.get(
   controllers.searchRecipesByIngredient
 )
 
-router.post('/recipes', controllers.createNewRecipe)
+router.post(
+  '/recipes',
+  middleware.stripToken,
+  middleware.verifyToken,
+  controllers.createNewRecipe
+)
 
-router.put('/recipes/:recipeId', controllers.updateRecipe)
+router.get(
+  '/user',
+  middleware.stripToken,
+  middleware.verifyToken,
+  controllers.getUser
+)
 
-router.delete('/recipes/:recipeId', controllers.deleteRecipe)
+router.put(
+  '/recipes/:recipeId',
+  middleware.stripToken,
+  middleware.verifyToken,
+  controllers.updateRecipe
+)
+
+router.delete(
+  '/recipes/:recipeId',
+  middleware.stripToken,
+  middleware.verifyToken,
+  controllers.deleteRecipe
+)
 
 router.get('/pantry', controllers.getManyIngredients)
 
-router.post('/ingredient', controllers.createNewIngredient)
+router.post(
+  '/ingredient',
+  middleware.stripToken,
+  middleware.verifyToken,
+  controllers.createNewIngredient
+)
 
-router.put('/ingredient/:ingredientId', controllers.updateIngredient)
+router.put(
+  '/ingredient/:ingredientId',
+  middleware.stripToken,
+  middleware.verifyToken,
+  controllers.updateIngredient
+)
 
-router.delete('/ingredient/:ingredientId', controllers.deleteIngredient)
+router.delete(
+  '/ingredient/:ingredientId',
+  middleware.stripToken,
+  middleware.verifyToken,
+  controllers.deleteIngredient
+)
+
+// Auth routes
+
+router.post('/register', authControllers.register)
+
+router.post('/login', authControllers.login)
+
+router.get(
+  '/session',
+  middleware.stripToken,
+  middleware.verifyToken,
+  middleware.verifyUser,
+  authControllers.checkSession
+)
+// Admin routes
+
+router.delete(
+  '/admin/reset_recipes',
+  middleware.stripToken,
+  middleware.verifyToken,
+  middleware.verifyUser,
+  adminControllers.deleteAllCreatedRecipes
+)
+
+router.delete(
+  '/admin/reset_ingredients',
+  middleware.stripToken,
+  middleware.verifyToken,
+  middleware.verifyUser,
+  adminControllers.deleteAllCreatedIngredients
+)
+
+router.delete(
+  '/admin/reset_users',
+  middleware.stripToken,
+  middleware.verifyToken,
+  middleware.verifyUser,
+  adminControllers.deleteAllCreatedUsers
+)
 
 module.exports = router
