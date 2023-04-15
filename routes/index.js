@@ -1,6 +1,7 @@
 const { Router } = require('express')
 const controllers = require('../controllers/AppController')
 const authControllers = require('../controllers/AuthController')
+const adminControllers = require('../controllers/AdminController')
 const middleware = require('../middleware')
 const router = Router()
 
@@ -87,7 +88,7 @@ router.delete(
   '/admin/reset_recipes',
   middleware.stripToken,
   middleware.verifyToken,
-  controllers.deleteAllCreatedRecipes
+  adminControllers.deleteAllCreatedRecipes
 )
 
 module.exports = router

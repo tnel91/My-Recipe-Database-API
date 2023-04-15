@@ -102,21 +102,6 @@ const deleteRecipe = async (req, res) => {
   }
 }
 
-const deleteAllCreatedRecipes = async (req, res) => {
-  const { id } = res.locals.payload
-  console.log(res.locals.payload)
-  try {
-    // const deletedRecipes = await Recipe.deleteMany({
-    //   createdAt: { $gte: '2023-04-14T02:23:23.359+00:00' }
-    // })
-    // console.log('DELORTED')
-    // console.log(deletedRecipes)
-    res.status(200).send('test')
-  } catch (error) {
-    res.status(500).send(error.message)
-  }
-}
-
 const getManyIngredients = async (req, res) => {
   try {
     const ingredients = await Ingredient.find(
@@ -177,6 +162,5 @@ module.exports = {
   updateIngredient,
   createNewIngredient,
   deleteIngredient,
-  getUser,
-  deleteAllCreatedRecipes
+  getUser
 }

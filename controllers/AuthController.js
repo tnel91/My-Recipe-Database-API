@@ -29,8 +29,6 @@ const login = async (req, res) => {
       if (user.get('admin')) {
         payload.admin = true
       }
-      console.log('PAYLOAD CREATED')
-      console.log(payload)
       let token = middleware.createToken(payload)
       return res.status(200).send({ user: payload, token })
     }
