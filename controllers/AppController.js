@@ -58,11 +58,14 @@ const createNewRecipe = async (req, res) => {
   const newRecipe = { ...req.body, owner: id }
   try {
     const createdRecipe = await Recipe.create(newRecipe)
-    const updatedUser = await User.findById(id)
-    console.log(createdRecipe)
-    updatedUser.recipes.push(createdRecipe._id)
-    // console.log(updatedUser.recipes)
-    res.status(200).send(createdRecipe)
+    const creator = await User.findById(id)
+    creator.recipes.push(createdRecipe._id)
+    const updatedUser = await User.findByIdAndUpdate(id, creator)
+    console.log(updatedUser)
+    res.status(200).send({
+      recipe: createdRecipe,
+      user: updatedUser
+    })
   } catch (error) {
     res.status(500).send(error.message)
   }

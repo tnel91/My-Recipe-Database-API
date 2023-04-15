@@ -91,4 +91,18 @@ router.delete(
   adminControllers.deleteAllCreatedRecipes
 )
 
+router.delete(
+  '/admin/reset_ingredients',
+  middleware.stripToken,
+  middleware.verifyToken,
+  adminControllers.deleteAllCreatedIngredients
+)
+
+router.delete(
+  '/admin/reset_users',
+  middleware.stripToken,
+  middleware.verifyToken,
+  adminControllers.deleteAllCreatedUsers
+)
+
 module.exports = router
