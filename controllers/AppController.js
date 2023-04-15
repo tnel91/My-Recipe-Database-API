@@ -61,7 +61,6 @@ const createNewRecipe = async (req, res) => {
     const creator = await User.findById(id)
     creator.recipes.push(createdRecipe._id)
     const updatedUser = await User.findByIdAndUpdate(id, creator)
-    console.log(updatedUser)
     res.status(200).send({
       recipe: createdRecipe,
       user: updatedUser

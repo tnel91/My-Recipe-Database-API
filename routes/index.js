@@ -80,6 +80,7 @@ router.get(
   '/session',
   middleware.stripToken,
   middleware.verifyToken,
+  middleware.verifyUser,
   authControllers.checkSession
 )
 // Admin routes
@@ -88,6 +89,7 @@ router.delete(
   '/admin/reset_recipes',
   middleware.stripToken,
   middleware.verifyToken,
+  middleware.verifyUser,
   adminControllers.deleteAllCreatedRecipes
 )
 
@@ -95,6 +97,7 @@ router.delete(
   '/admin/reset_ingredients',
   middleware.stripToken,
   middleware.verifyToken,
+  middleware.verifyUser,
   adminControllers.deleteAllCreatedIngredients
 )
 
@@ -102,6 +105,7 @@ router.delete(
   '/admin/reset_users',
   middleware.stripToken,
   middleware.verifyToken,
+  middleware.verifyUser,
   adminControllers.deleteAllCreatedUsers
 )
 

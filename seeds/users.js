@@ -7,6 +7,11 @@ db.on('error', console.error.bind(console, 'MongoDB connection error:'))
 const main = async () => {
   const users = [
     {
+      username: 'Admin',
+      email: 'admin@email.com',
+      password: await middleware.hashPassword('adminpassword')
+    },
+    {
       username: 'User 1',
       email: 'user1@email.com',
       password: await middleware.hashPassword('password1')

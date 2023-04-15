@@ -41,7 +41,7 @@ const deleteAllCreatedUsers = async (req, res) => {
   if (admin) {
     try {
       const deletedUsers = await User.deleteMany({
-        createdAt: { $gte: '2023-04-15T02:56:00.000+00:00' }
+        createdAt: { $gte: '2022-04-15T02:56:00.000+00:00' }
       })
       console.log('RESET USERS')
       console.log(deletedUsers)

@@ -1,3 +1,4 @@
+const { User } = require('../models')
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
 require('dotenv').config()
@@ -46,10 +47,25 @@ const verifyToken = (req, res, next) => {
   }
 }
 
+const verifyUser = async (req, res, next) => {
+  const { id } = res.locals.payload
+  try {
+    let user = await User.findById(id)
+    if (user) {
+      console.log('user found')
+      return next()
+    }
+    res.status(404).send({ status: 'Error', msg: 'User not found' })
+  } catch (error) {
+    res.status(401).send({ status: 'Error', msg: 'Unauthorized' })
+  }
+}
+
 module.exports = {
   stripToken,
   verifyToken,
   createToken,
   comparePassword,
-  hashPassword
+  hashPassword,
+  verifyUser
 }
