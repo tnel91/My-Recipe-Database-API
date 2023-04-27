@@ -26,13 +26,6 @@ router.post(
   controllers.createNewRecipe
 )
 
-router.get(
-  '/user',
-  middleware.stripToken,
-  middleware.verifyToken,
-  controllers.getUser
-)
-
 router.put(
   '/recipes/:recipeId',
   middleware.stripToken,
@@ -68,6 +61,13 @@ router.delete(
   middleware.stripToken,
   middleware.verifyToken,
   controllers.deleteIngredient
+)
+
+router.get(
+  '/user',
+  middleware.stripToken,
+  middleware.verifyToken,
+  controllers.getUser
 )
 
 // Auth routes
