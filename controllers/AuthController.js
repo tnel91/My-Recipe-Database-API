@@ -20,7 +20,6 @@ const login = async (req, res) => {
   try {
     const { email, password } = req.body
     let user = await User.findOne({ email: email })
-    console.log(user)
     if (user && (await middleware.comparePassword(password, user.password))) {
       let payload = {
         id: user.id,
